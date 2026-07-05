@@ -37,6 +37,21 @@ article p{margin-bottom:1.4em;max-width:41em}
 article h2{font-family:'Lora',serif;font-weight:600;font-size:28px;margin:2em 0 .7em}
 article h2 .step{display:inline-block;font-family:var(--mono);font-size:13px;font-weight:500;background:var(--sage-soft);color:var(--sage);border-radius:6px;padding:3px 9px;margin-right:10px;vertical-align:middle}
 .hl{background:linear-gradient(transparent 55%, var(--amber-soft) 55%);padding:0 2px}
+.lead-line{font-family:'Lora',serif;font-size:clamp(19px,2.6vw,24px);line-height:1.5;max-width:30em;margin-bottom:1.2em}
+.thoughts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 1.8em}
+.thought{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:10px;padding:16px 18px}
+.thought .t-num{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+.thought .t-text{font-family:'Lora',serif;font-style:italic;font-size:17.5px;line-height:1.45}
+.big-q{font-family:'Lora',serif;font-weight:600;font-size:clamp(20px,2.8vw,25px);line-height:1.4;margin:1.6em 0 .8em;max-width:26em}
+.about-me{display:flex;gap:14px;align-items:flex-start;background:var(--sage-soft);border-radius:12px;padding:16px 18px;margin:0 0 1.8em;max-width:42em}
+.about-me .hand{font-size:26px;line-height:1;flex:none;margin-top:2px}
+.about-me p{margin:0;font-size:15.5px;line-height:1.6}
+.checkrow{list-style:none;margin:.4em 0 1.4em;padding:0;max-width:40em}
+.checkrow li{position:relative;padding:0 0 10px 30px;font-size:16px;line-height:1.55}
+.checkrow li::before{content:'✓';position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--sage-soft);color:var(--sage);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.tickers{display:inline-flex;flex-wrap:wrap;gap:6px;vertical-align:middle}
+.tick{font-family:var(--mono);font-size:13px;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+@media (max-width:560px){.thoughts{grid-template-columns:1fr}}
 .num{font-family:var(--mono);color:var(--sage);font-weight:500}
 
 .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;margin:38px 0;box-shadow:0 1px 4px rgba(29,39,51,.06)}
@@ -131,11 +146,25 @@ footer p{margin-bottom:.9em;max-width:44em}
 
 <article>
   <div class="wrap">
-    <p>Two thoughts keep most would-be investors on the sidelines: <em>"investing isn't for people like me"</em> and <em>"too many options, what if I pick wrong?"</em></p>
-    <p>I was one of those people until very recently. It took nudges from a couple of friends before I finally started. I'm new and no expert, but maybe that's the point. Experts open with a list of do's and don'ts, and the anxious beginner is lost at the outset. Someone who just crossed the starting line can say something more useful: if I could get past this, so can you.</p>
-    <p>Take the group where I've watched both thoughts hit hardest: practicing Muslims. Many assume ordinary funds can't meet Islamic requirements, so investing is off-limits. It isn't. Multiple U.S.-listed funds are built for exactly this: they screen out prohibited industries such as alcohol and gambling, exclude companies too reliant on interest-bearing debt or interest income, and purify the small amounts that slip through. And you can buy them in any normal brokerage account. But then thought two kicks in. You've heard of SPUS, HLAL, SPWO, UMMA, or SPTE at some point, and after waiting this long you refuse to finally act and pick wrong. So the tabs stay open, and another year passes. Not Muslim? Swap in your own "not for people like me" — too young, too late, not a finance person. Same mistake, same fix.</p>
-    <p>The second kind of hesitation is newer: <em>"Okay, there's SPUS, HLAL, SPWO, UMMA, SPTE... which one? What if I pick wrong?"</em> And so months pass. This is decision paralysis, and the honest, data-backed answer to it is one most people don't expect:</p>
-    <p><span class="hl"><b>For a beginner, the choice between the mainstream halal equity funds barely matters.</b></span> They're highly correlated with each other: the U.S. ones move nearly in lockstep, and so do the global ones. Picking "wrong" between them is almost impossible. What costs you is not picking at all.</p>
+    <p class="lead-line">Been meaning to invest for years? Chances are one of these two thoughts is doing the stalling:</p>
+    <div class="thoughts">
+      <div class="thought"><div class="t-num">Thought one</div><div class="t-text">"Investing isn't for people like me."</div></div>
+      <div class="thought"><div class="t-num">Thought two</div><div class="t-text">"Too many options. What if I pick wrong?"</div></div>
+    </div>
+    <div class="about-me">
+      <div class="hand">👋</div>
+      <p>Quick note about me: I was one of those people until very recently. It took nudges from a couple of friends before I finally started. I'm new and no expert, but maybe that's the point. Experts open with do's and don'ts, and the anxious beginner is lost at the outset. Someone who just crossed the starting line can say something more useful: <span class="hl">if I could get past this, so can you.</span></p>
+    </div>
+    <p><b>Thought one</b> hits hardest in the group where I've watched it up close: practicing Muslims. Many assume ordinary funds can't meet Islamic requirements, so investing is off-limits. It isn't. Multiple U.S.-listed funds are built for exactly this:</p>
+    <ul class="checkrow">
+      <li>They screen out prohibited industries such as alcohol and gambling</li>
+      <li>They exclude companies too reliant on interest-bearing debt or interest income</li>
+      <li>They purify the small amounts that slip through</li>
+      <li>And they trade in any normal brokerage account</li>
+    </ul>
+    <p><b>Thought two</b> follows right behind. You may have heard of one or more of these: <span class="tickers"><span class="tick">SPUS</span><span class="tick">HLAL</span><span class="tick">SPWO</span><span class="tick">UMMA</span><span class="tick">SPTE</span></span>. After waiting this long, you refuse to finally act and pick wrong. So the tabs stay open, and another year passes. Not Muslim? Swap in your own "not for people like me" — too young, too late, not a finance person. Same mistake, same fix.</p>
+    <p class="big-q">So which fund is the right one?</p>
+    <p><span class="hl"><b>For a beginner, it barely matters.</b></span> The mainstream halal equity funds are highly correlated: the U.S. ones move nearly in lockstep, and so do the global ones. Picking "wrong" between them is almost impossible. What costs you is not picking at all.</p>
 
     <h2><span class="step">Guess first</span>Before the charts, what does your gut say?</h2>
     <p>A prediction made before seeing the answer sticks far better than a fact read passively. So here are three quick questions. No grades, no email capture, and your answers stay on your device. I did the basic math so you don't have to; after each guess, you'll see the real number from the data.</p>
