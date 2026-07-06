@@ -37,6 +37,21 @@ article p{margin-bottom:1.4em;max-width:41em}
 article h2{font-family:'Lora',serif;font-weight:600;font-size:28px;margin:2em 0 .7em}
 article h2 .step{display:inline-block;font-family:var(--mono);font-size:13px;font-weight:500;background:var(--sage-soft);color:var(--sage);border-radius:6px;padding:3px 9px;margin-right:10px;vertical-align:middle}
 .hl{background:linear-gradient(transparent 55%, var(--amber-soft) 55%);padding:0 2px}
+.lead-line{font-family:'Lora',serif;font-size:clamp(19px,2.6vw,24px);line-height:1.5;max-width:30em;margin-bottom:1.2em}
+.thoughts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 1.8em}
+.thought{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:10px;padding:16px 18px}
+.thought .t-num{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+.thought .t-text{font-family:'Lora',serif;font-style:italic;font-size:17.5px;line-height:1.45}
+.big-q{font-family:'Lora',serif;font-weight:600;font-size:clamp(20px,2.8vw,25px);line-height:1.4;margin:1.6em 0 .8em;max-width:26em}
+.about-me{display:flex;gap:14px;align-items:flex-start;background:var(--sage-soft);border-radius:12px;padding:16px 18px;margin:0 0 1.8em;max-width:42em}
+.about-me .hand{font-size:26px;line-height:1;flex:none;margin-top:2px}
+.about-me p{margin:0;font-size:15.5px;line-height:1.6}
+.checkrow{list-style:none;margin:.4em 0 1.4em;padding:0;max-width:40em}
+.checkrow li{position:relative;padding:0 0 10px 30px;font-size:16px;line-height:1.55}
+.checkrow li::before{content:'✓';position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--sage-soft);color:var(--sage);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.tickers{display:inline-flex;flex-wrap:wrap;gap:6px;vertical-align:middle}
+.tick{font-family:var(--mono);font-size:13px;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+@media (max-width:560px){.thoughts{grid-template-columns:1fr}}
 .num{font-family:var(--mono);color:var(--sage);font-weight:500}
 
 .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;margin:38px 0;box-shadow:0 1px 4px rgba(29,39,51,.06)}
@@ -122,22 +137,37 @@ footer p{margin-bottom:.9em;max-width:44em}
 
 <header>
   <div class="wrap">
-    <div class="eyebrow">Halal investing · For beginners</div>
+    <div class="eyebrow">Investing for the hesitant · A halal-funds case study</div>
     <h1>You don't need the perfect fund. You need a first month.</h1>
-    <p class="dek">Most people who never invest aren't reckless — they're careful. So careful that they wait for certainty that never comes. This guide is for the careful ones: especially those who weren't sure ethical, Shariah-compliant options existed, or froze when they found out there were several.</p>
+    <p class="dek">Most people who never invest aren't reckless. They're careful. So careful that they wait for a certainty that never comes. This guide is for anyone on the sidelines, told through the story of one careful group in particular: Muslims who assumed investing wasn't an option for them, then froze when they learned it was.</p>
     <p class="byline">Fund data: daily closes, Jul 2024 – Jul 2026 · calculators run live in this page</p>
   </div>
 </header>
 
 <article>
   <div class="wrap">
-    <p>Almost everyone knows someone — or is someone — who has "been meaning to start investing" for years. The hesitation is rarely laziness. It's usually one of two very reasonable-sounding thoughts, and for practicing Muslims both show up with extra force.</p>
-    <p>The first: <em>"I don't think investing is even an option for me."</em> Many Muslims assume the market is off-limits entirely — that participating means interest-based finance. It doesn't have to: there's a whole family of halal ETFs listed on U.S. exchanges, buyable in any normal brokerage account, screened to exclude interest-based businesses, with impermissible income purified per each fund's methodology.</p>
-    <p>The second kind of hesitation is newer: <em>"Okay, there's SPUS, HLAL, SPWO, UMMA, SPTE... which one? What if I pick wrong?"</em> And so months pass. This is decision paralysis, and the honest, data-backed answer to it is one most people don't expect:</p>
-    <p><span class="hl"><b>For a beginner, the choice between the mainstream halal equity funds barely matters.</b></span> They're highly correlated with each other — the U.S. ones move nearly in lockstep, and so do the global ones. Picking "wrong" between them is almost impossible. What costs you is not picking at all.</p>
+    <p class="lead-line">Been meaning to invest for years? Chances are one of these two thoughts is doing the stalling:</p>
+    <div class="thoughts">
+      <div class="thought"><div class="t-num">Thought one</div><div class="t-text">"Investing isn't for people like me."</div></div>
+      <div class="thought"><div class="t-num">Thought two</div><div class="t-text">"Too many options. What if I pick wrong?"</div></div>
+    </div>
+    <div class="about-me">
+      <div class="hand">👋</div>
+      <p>Quick note about me: I was one of those people until very recently. It took nudges from a couple of friends before I finally started. I'm new and no expert, but maybe that's the point. Experts open with do's and don'ts, and the anxious beginner is lost at the outset. Someone who just crossed the starting line can say something more useful: <span class="hl">if I could get past this, so can you.</span></p>
+    </div>
+    <p><b>Thought one</b> hits hardest in the group where I've watched it up close: practicing Muslims. Many assume ordinary funds can't meet Islamic requirements, so investing is off-limits. It isn't. Multiple U.S.-listed funds are built for exactly this:</p>
+    <ul class="checkrow">
+      <li>They screen out prohibited industries such as alcohol and gambling</li>
+      <li>They exclude companies too reliant on interest-bearing debt or interest income</li>
+      <li>They purify the small amounts that slip through</li>
+      <li>And they trade in any normal brokerage account</li>
+    </ul>
+    <p><b>Thought two</b> follows right behind. You may have heard of one or more of these: <span class="tickers"><span class="tick">SPUS</span><span class="tick">HLAL</span><span class="tick">SPWO</span><span class="tick">UMMA</span><span class="tick">SPTE</span></span>. After waiting this long, you refuse to finally act and pick wrong. So the tabs stay open, and another year passes. Not Muslim? Swap in your own "not for people like me" — too young, too late, not a finance person. Same mistake, same fix.</p>
+    <p class="big-q">So which fund is the right one?</p>
+    <p><span class="hl"><b>For a beginner, it barely matters.</b></span> The mainstream halal equity funds are highly correlated: the U.S. ones move nearly in lockstep, and so do the global ones. Picking "wrong" between them is almost impossible. What costs you is not picking at all.</p>
 
-    <h2><span class="step">Guess first</span>Before we show you anything — what's your gut say?</h2>
-    <p>Research on learning says a prediction made before seeing the answer sticks ten times better than a fact read passively. So: three quick questions, no grades, no email capture. Your answers stay on your device. After each one you'll see how your guess compares to what people typically assume — and then the data.</p>
+    <h2><span class="step">Guess first</span>Before the charts, what does your gut say?</h2>
+    <p>A prediction made before seeing the answer sticks far better than a fact read passively. So here are three quick questions. No grades, no email capture, and your answers stay on your device. I did the basic math so you don't have to; after each guess, you'll see the real number from the data.</p>
   </div>
 
   <div class="wrap-wide">
@@ -149,50 +179,48 @@ footer p{margin-bottom:.9em;max-width:44em}
         <div class="quiz-prompt">1. $100 invested in a halal U.S. equity ETF two years ago — what's it worth today?</div>
         <div class="quiz-opts" role="group">
           <button class="quiz-opt" data-i="0">Less than $100</button>
-          <button class="quiz-opt" data-i="1">$100–$110</button>
-          <button class="quiz-opt" data-i="2">$110–$125</button>
-          <button class="quiz-opt" data-i="3" data-correct>$125+</button>
+          <button class="quiz-opt" data-i="1">$100–$115</button>
+          <button class="quiz-opt" data-i="2">$115–$130</button>
+          <button class="quiz-opt" data-i="3" data-correct>More than $130</button>
         </div>
         <div class="quiz-reveal">
-          <b>Answer: about $140.</b> SPUS turned $100 into ~$140 and HLAL into ~$140 as well over this specific two-year window (Jul 2024–Jul 2026). Most people guess low — surveys consistently find non-investors underestimate equity returns and overestimate the odds of losing everything. (Caveat: this was a strong period; long-run averages are more modest.)
-          <div class="guess-bars" data-dist="18,31,33,18"></div>
+          <b>Answer: about $140.</b> SPUS turned $100 into roughly $140, and HLAL did about the same, over this specific two-year window (Jul 2024 to Jul 2026). If you guessed low, you're not alone. That instinct is exactly what keeps careful people on the sidelines. (Caveat: this was a strong period, and long-run averages are more modest.)
         </div>
       </div>
 
       <div class="quiz-q" data-q="1">
-        <div class="quiz-prompt">2. Out of the five main halal equity ETFs, how much did fund choice matter? (Gap between best and worst pick, same two years)</div>
+        <div class="quiz-prompt">2. Same two years, five popular halal equity ETFs. What was the gap between the best and worst performer?</div>
         <div class="quiz-opts" role="group">
-          <button class="quiz-opt" data-i="0">Huge — one doubled, one lost money</button>
-          <button class="quiz-opt" data-i="1" data-correct>Moderate — all gained, spread of ~35 points</button>
-          <button class="quiz-opt" data-i="2">Tiny — nearly identical results</button>
+          <button class="quiz-opt" data-i="0">Under 10 points</button>
+          <button class="quiz-opt" data-i="1">10–25 points</button>
+          <button class="quiz-opt" data-i="2" data-correct>25–45 points</button>
+          <button class="quiz-opt" data-i="3">More than 45 points</button>
         </div>
         <div class="quiz-reveal">
-          <b>Answer: moderate — and that's the point.</b> Every single one finished up: the "worst" pick (HLAL, +40%) and the "best" (SPTE, +75%) were both solid outcomes. The catastrophic scenario people fear — picking the one dud — wasn't on the menu. The only losing move was the $100 that stayed in checking.
-          <div class="guess-bars" data-dist="42,33,25"></div>
+          <b>Answer: about 35 points.</b> The "worst" pick (HLAL, +40%) and the "best" (SPTE, +75%) were both solid outcomes, because every single fund finished up. The scenario people fear, picking the one fund that loses while the rest gain, wasn't on the menu. The only losing move was the $100 that stayed in checking.
         </div>
       </div>
 
       <div class="quiz-q" data-q="2">
         <div class="quiz-prompt">3. How much do you need to start?</div>
         <div class="quiz-opts" role="group">
-          <button class="quiz-opt" data-i="0">$5,000+</button>
-          <button class="quiz-opt" data-i="1">$1,000</button>
-          <button class="quiz-opt" data-i="2">$100</button>
+          <button class="quiz-opt" data-i="0">At least $5,000</button>
+          <button class="quiz-opt" data-i="1">At least $1,000</button>
+          <button class="quiz-opt" data-i="2">At least $500</button>
           <button class="quiz-opt" data-i="3" data-correct>Under $50</button>
         </div>
         <div class="quiz-reveal">
-          <b>Answer: under $50 — often under $5.</b> Major brokerages now offer fractional shares with no commissions, so a $25 monthly auto-buy is a real, functioning investment plan. The minimum-capital barrier most people imagine hasn't existed for years.
-          <div class="guess-bars" data-dist="24,35,27,14"></div>
+          <b>Answer: under $50, often under $5.</b> Major brokerages now offer fractional shares with no commissions, so a $25 monthly auto-buy is a real, functioning investment plan. The minimum-capital barrier most people imagine hasn't existed for years.
         </div>
       </div>
     </div>
   </div>
 
   <div class="wrap">
-    <p>If your guesses ran pessimistic, you're in good company — that's the norm, and it's exactly the miscalibration that keeps careful people out of the market. Now the actual data.</p>
+    <p>If your guesses ran pessimistic, you're in good company. That's the norm, and it's exactly the miscalibration that keeps careful people out of the market. Now the actual data.</p>
 
     <h2><span class="step">See it</span>They all climb the same mountain</h2>
-    <p>Below is the actual two-year history of five halal equity ETFs, all indexed to $100. Toggle them on and off. Notice that the lines braid around each other — different heights, same direction. The lesson isn't "they're identical." It's that <span class="num">any</span> of them would have gotten a beginner meaningfully invested.</p>
+    <p>Below is the actual two-year history of five halal equity ETFs, all indexed to $100. Toggle them on and off. Notice that the lines braid around each other: different heights, same direction. The lesson isn't that they're identical. It's that <span class="num">any</span> of them would have gotten a beginner meaningfully invested. And if the halal constraint isn't yours, the same lesson holds for mainstream index funds (think S&P 500 funds like VOO, or Fidelity's FXAIX): the popular choices move together far more than they differ.</p>
   </div>
 
   <div class="wrap-wide">
@@ -209,7 +237,7 @@ footer p{margin-bottom:.9em;max-width:44em}
     <p>Every one of these finished well above where it started. The spread between the "best" and "worst" pick matters far less than the spread between <em>investing and not investing</em>. Which brings us to the uncomfortable part.</p>
 
     <h2><span class="step">Feel it</span>The cost of waiting is invisible — until you calculate it</h2>
-    <p>Money sitting in a checking account feels safe. But it quietly loses purchasing power to inflation, and it forfeits the compounding that markets have historically provided. Play with the sliders — use a modest return assumption, not the bull-market numbers above — and see what your own hesitation is priced at.</p>
+    <p>Money sitting in a checking account feels safe. But it quietly loses purchasing power to inflation, and it forfeits the compounding that markets have historically provided. Play with the sliders, using a modest return assumption rather than the bull-market numbers above, and see what your own hesitation is priced at.</p>
   </div>
 
   <div class="wrap-wide">
@@ -240,28 +268,28 @@ footer p{margin-bottom:.9em;max-width:44em}
   </div>
 
   <div class="wrap">
-    <p class="note">The return slider is an assumption, not a promise. Markets have long stretches of flat or negative returns; the two-year window above was unusually strong. That's exactly why the calculator defaults to 7%, not 20%. Even at modest assumptions, the gap compounds.</p>
+    <p class="note">The return slider is an assumption, not a promise. Markets have long stretches of flat or negative returns, and the two-year window above was unusually strong. That's exactly why the calculator defaults to 7% rather than 20%. Even at modest assumptions, the gap compounds.</p>
 
     <h2><span class="step">Start it</span>The gradual way in — no lump sums, no heroics</h2>
-    <p>You don't need to move your savings in one dramatic transfer. The beginner-proof approach is <b>dollar-cost averaging</b>: a fixed amount, every month, into one or two funds, automatically. Some months you buy high, some months low — and you never have to time anything.</p>
+    <p>You don't need to move your savings in one dramatic transfer. The beginner-proof approach is <b>dollar-cost averaging</b>: a fixed amount, every month, into one or two funds, automatically. Some months you buy high, some months low, and you never have to time anything.</p>
 
     <ol class="plan">
-      <li><b>Open a brokerage account</b><p>Any major U.S. brokerage works — halal ETFs trade like any stock. Look for one with no commissions and fractional shares, so even $25 buys something.</p></li>
-      <li><b>Pick one fund. Two at most.</b><p>One U.S. halal equity fund (e.g. SPUS or HLAL — the data says the choice between them is nearly a coin flip), and optionally one global fund (e.g. SPWO or UMMA) for geographic spread. Stop there. More funds now means more decisions, not more diversification.</p></li>
-      <li><b>Automate a small monthly buy</b><p>Choose a number that doesn't scare you — $50, $100, $200 — and schedule it. The habit matters more than the amount in year one.</p></li>
-      <li><b>Ignore it for six months</b><p>No checking daily. Prices will wobble; that's the deal. Your only job is to let the automation run.</p></li>
-      <li><b>Then, and only then, get fancy</b><p>Once the habit is boring, you can explore diversifiers — gold (GLDM) and sukuk (SPSK) genuinely move differently from equities. That's a later chapter, not a prerequisite.</p></li>
+      <li><b>Open a brokerage account</b><p>Any major U.S. brokerage works, since halal ETFs trade like any stock. Look for one with no commissions and fractional shares, so even $25 buys something.</p></li>
+      <li><b>Pick one fund. Two at most.</b><p>One U.S. halal equity fund (SPUS or HLAL, and the data says the choice between them is nearly a coin flip), and optionally one global fund (SPWO or UMMA) for geographic spread. Stop there. More funds now means more decisions, not more diversification.</p></li>
+      <li><b>Automate a small monthly buy</b><p>Choose a number that doesn't scare you ($50, $100, $200) and schedule it. The habit matters more than the amount in year one.</p></li>
+      <li><b>Ignore it for six months</b><p>No checking daily. Prices will wobble, and that's the deal. Your only job is to let the automation run.</p></li>
+      <li><b>Then, and only then, get fancy</b><p>Once the habit is boring, you can explore diversifiers such as gold (GLDM) and sukuk (SPSK), which genuinely move differently from equities. That's a later chapter, not a prerequisite.</p></li>
     </ol>
 
     <h2>The honest fine print</h2>
-    <p>Past performance doesn't guarantee anything — the trend lines above describe what happened, not what will. Halal funds carry expense ratios (roughly 0.18%–0.65% for the funds mentioned). Screening methodologies differ slightly between fund families; if strictness matters to you, read each fund's Shariah methodology or ask a scholar you trust. And this page is education, not personalized investment or religious advice.</p>
-    <p>But here's the thing the fine print can't undo: <span class="hl">every year of waiting for the perfect answer is a year of compounding you don't get back.</span> Pick one fund. Set up $50 a month. You can refine everything else later — from inside the market instead of outside it.</p>
+    <p>Past performance doesn't guarantee anything. The trend lines above describe what happened, not what will. Halal funds carry expense ratios (roughly 0.18% to 0.65% for the funds mentioned). Screening methodologies differ slightly between fund families, so if strictness matters to you, read each fund's published methodology or ask a scholar you trust. And this page is education, not personalized investment or religious advice.</p>
+    <p>But here's the thing the fine print can't undo: <span class="hl">every year of waiting for the perfect answer is a year of compounding you don't get back.</span> Pick one fund. Set up $50 a month. You can refine everything else later, from inside the market instead of outside it.</p>
   </div>
 </article>
 
 <footer>
   <div class="wrap">
-    <p>Fund trend data: actual daily closing prices Jul 1 2024 – Jul 1 2026, indexed to 100. Calculator uses monthly compounding of user-set assumptions; "cash" scenario assumes 0% nominal return, with inflation applied to show real purchasing power. Educational content only — not investment, tax, legal, or Shariah advice.</p>
+    <p>Fund trend data: actual daily closing prices Jul 1 2024 – Jul 1 2026, indexed to 100. Calculator uses monthly compounding of user-set assumptions; "cash" scenario assumes 0% nominal return, with inflation applied to show real purchasing power. Educational content only — not investment, tax, legal, or religious advice.</p>
   </div>
 </footer>
 
@@ -324,7 +352,7 @@ function renderTrend(){
     const best=finals[0],worst=finals[finals.length-1];
     document.getElementById('trendNote').textContent =
       tickers.length>1
-      ? `$100 became $${worst.v.toFixed(0)}–$${best.v.toFixed(0)} depending on the pick — every selected fund ended higher than it began.`
+      ? `$100 became $${worst.v.toFixed(0)}–$${best.v.toFixed(0)} depending on the pick. Every selected fund ended higher than it began.`
       : `$100 in ${best.t} became $${best.v.toFixed(0)} over these two years.`;
   } else {
     document.getElementById('trendNote').textContent='Select at least one fund above.';
@@ -393,10 +421,9 @@ function calc(){
 calc();
 
 // ---------- guess-first quiz ----------
-// "What others guessed" distributions below are ILLUSTRATIVE, modeled on
-// published survey findings about return expectations & investing minimums.
-// To collect real aggregates, POST picks to your own endpoint here and
-// fetch live distributions instead. See submitGuess().
+// To collect real reader guesses later, POST picks in submitGuess() to your
+// own endpoint (Supabase/Google Form), then fetch live counts and render a
+// distribution bar per option here. Until then, reveals show data only.
 function submitGuess(qIndex, optIndex){
   // Placeholder for real aggregation. Example:
   // fetch('https://YOUR-ENDPOINT/guess', {method:'POST',
@@ -406,8 +433,6 @@ function submitGuess(qIndex, optIndex){
 document.querySelectorAll('.quiz-q').forEach(q=>{
   const opts=[...q.querySelectorAll('.quiz-opt')];
   const reveal=q.querySelector('.quiz-reveal');
-  const bars=q.querySelector('.guess-bars');
-  const dist=bars.dataset.dist.split(',').map(Number);
   opts.forEach((btn,i)=>{
     btn.addEventListener('click',()=>{
       if(q.dataset.done)return;
@@ -415,18 +440,7 @@ document.querySelectorAll('.quiz-q').forEach(q=>{
       btn.classList.add('picked');
       opts.forEach(o=>{o.disabled=true; if(o.hasAttribute('data-correct'))o.classList.add('correct-reveal');});
       submitGuess(+q.dataset.q, i);
-      // build bars
-      bars.innerHTML = opts.map((o,j)=>`
-        <div class="gbar-row${j===i?' yours':''}">
-          <div class="gbar-lbl">${j===i?'you → ':''}${o.textContent.length>18?o.textContent.slice(0,17)+'…':o.textContent}</div>
-          <div class="gbar-track"><div class="gbar-fill" data-w="${dist[j]}"></div></div>
-          <div class="gbar-pct">${dist[j]}%</div>
-        </div>`).join('') +
-        '<div class="guess-note">"Others" bars are illustrative, based on published surveys of return expectations — not live poll data.</div>';
       reveal.classList.add('show');
-      requestAnimationFrame(()=>requestAnimationFrame(()=>{
-        bars.querySelectorAll('.gbar-fill').forEach(f=>f.style.width=f.dataset.w+'%');
-      }));
     });
   });
 });
