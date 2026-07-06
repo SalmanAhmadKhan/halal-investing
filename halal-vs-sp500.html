@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Do You Give Up Choosing the Halal S&P 500?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Public+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+:root{
+  --night:#1d2733;--slate:#4a5a6a;--mist:#eef1f2;--card:#ffffff;--line:#d8dee2;
+  --sage:#2e7d5b;--sage-soft:#e3f0e9;--amber:#c07a2d;--amber-soft:#f7ecdc;--sky:#2f6fa8;
+  --mono:'Spline Sans Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--mist);color:var(--night);font-family:'Public Sans',sans-serif;font-size:17px;line-height:1.7}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+.wrap-wide{max-width:1000px;margin:0 auto;padding:0 22px}
+
+header{background:var(--night);color:#f2f4f5;padding:70px 0 52px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9fc3ae;margin-bottom:20px}
+h1{font-family:'Lora',serif;font-weight:500;font-size:clamp(32px,5vw,50px);line-height:1.12;max-width:15em}
+.dek{font-family:'Lora',serif;font-style:italic;font-size:clamp(17px,2.3vw,21px);color:#b9c4cc;margin-top:20px;max-width:34em;line-height:1.55}
+.byline{font-family:var(--mono);font-size:12px;color:#8b99a5;margin-top:24px}
+
+article{padding:50px 0 30px}
+article p{margin-bottom:1.35em;max-width:41em}
+article h2{font-family:'Lora',serif;font-weight:600;font-size:27px;margin:1.9em 0 .7em}
+.hl{background:linear-gradient(transparent 55%, var(--amber-soft) 55%);padding:0 2px}
+.num{font-family:var(--mono);color:var(--sage);font-weight:500}
+
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;margin:36px 0;box-shadow:0 1px 4px rgba(29,39,51,.06)}
+.panel-title{font-family:'Lora',serif;font-weight:600;font-size:21px;margin-bottom:4px}
+.panel-sub{font-family:var(--mono);font-size:12px;color:var(--slate);margin-bottom:20px}
+
+.chart-box{position:relative;height:340px}
+.chart-note{font-family:var(--mono);font-size:11.5px;color:var(--slate);margin-top:12px;text-align:center}
+
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0}
+.stat{background:var(--mist);border:1px solid var(--line);border-radius:10px;padding:15px 17px}
+.stat .tkr{font-family:var(--mono);font-size:13px;font-weight:500;display:flex;align-items:center;gap:7px}
+.stat .tkr .dot{width:9px;height:9px;border-radius:2px}
+.stat table{width:100%;margin-top:10px;border-collapse:collapse;font-family:var(--mono);font-size:12.5px}
+.stat table td{padding:3px 0}
+.stat table td:last-child{text-align:right;font-weight:500}
+.stat .muted{color:var(--slate)}
+
+.tradeoff{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:1.6em 0}
+.to-card{border-radius:12px;padding:18px 20px}
+.to-card.give{background:var(--amber-soft);border:1px solid #e6cfa8}
+.to-card.get{background:var(--sage-soft);border:1px solid #bcd9c9}
+.to-card h3{font-family:'Lora',serif;font-size:18px;margin-bottom:10px}
+.to-card ul{list-style:none;padding:0;margin:0}
+.to-card li{position:relative;padding-left:20px;margin-bottom:8px;font-size:14.5px;line-height:1.5}
+.to-card li::before{position:absolute;left:0;top:0;font-family:var(--mono)}
+.to-card.give li::before{content:'−';color:var(--amber)}
+.to-card.get li::before{content:'+';color:var(--sage)}
+
+.callout{background:var(--sage-soft);border-radius:10px;padding:16px 18px;margin:1.4em 0;font-size:15.5px;line-height:1.55}
+.callout b{font-weight:600}
+.note{font-size:14.5px;color:var(--slate);border-left:3px solid var(--amber);padding-left:16px;margin:1.6em 0;max-width:40em}
+
+footer{border-top:1px solid var(--line);padding:32px 0 56px;font-size:13.5px;color:var(--slate)}
+footer p{margin-bottom:.9em;max-width:44em}
+footer a{color:var(--sage)}
+
+@media (max-width:640px){header{padding:48px 0 36px}.panel{padding:18px;margin-left:-10px;margin-right:-10px}.chart-box{height:280px}.stats,.tradeoff{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Reader request · Halal vs standard</div>
+    <h1>What do you give up choosing the halal S&P 500?</h1>
+    <p class="dek">A reader asked the obvious question: if I screen the S&P 500 for faith reasons, how much return am I leaving on the table? The three-year answer is not what most people expect.</p>
+    <p class="byline">Monthly data · May 2023 – May 2026 · growth of $1,000 · SPUS vs the standard S&P 500 (total return)</p>
+  </div>
+</header>
+
+<article>
+  <div class="wrap">
+    <p>After the getting-started post, a reader raised the question sitting under all of this: <span class="hl">what's the cost of the halal version?</span> The standard S&P 500 is the default benchmark for American investing. If a Muslim investor picks a screened version instead, the intuitive assumption is that removing companies must mean removing return. Fewer stocks, less diversification, worse performance. A penalty for principle.</p>
+    <p>It's a reasonable worry, and worth checking rather than assuming. So I put <b>SPUS</b> (the SP Funds S&P 500 halal ETF) head-to-head against the <b>standard S&P 500</b> total return over the last three years, starting both at $1,000.</p>
+
+    <h2>Growth of $1,000</h2>
+    <p>The two lines track each other almost perfectly for most of the window, which is the first thing to notice. Screening the index did not send it off on some wildly different path.</p>
+  </div>
+
+  <div class="wrap-wide">
+    <div class="panel">
+      <div class="panel-title">Halal S&P 500 vs the standard S&P 500</div>
+      <div class="panel-sub">Growth of $1,000 · May 2023 → May 2026 · total return</div>
+      <div class="chart-box"><canvas id="chart" aria-label="Growth of $1,000 in SPUS versus the standard S&P 500"></canvas></div>
+      <p class="chart-note" id="chartNote"></p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p>Here's the part that surprises people. Over these three years, <span class="hl">the halal version didn't lag the S&P 500 — it slightly beat it.</span> SPUS turned $1,000 into about <span class="num">$1,976</span>; the standard S&P 500 reached about <span class="num">$1,889</span>. That's roughly a 98% gain versus 89%, or about 25.5% a year versus 23.6%.</p>
+  </div>
+
+  <div class="wrap-wide">
+    <div class="panel">
+      <div class="panel-title">The three-year scorecard</div>
+      <div class="panel-sub">Total return, annualized return, volatility, worst peak-to-trough drop</div>
+      <div class="stats" id="stats"></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p>But notice the volatility and drawdown columns before you celebrate. The halal fund got its edge by being a little <em>bumpier</em>: its annualized volatility was higher (about <span class="num">15.5%</span> vs <span class="num">13.3%</span>) and its worst peak-to-trough drop was deeper (about <span class="num">−11%</span> vs <span class="num">−8%</span>). It earned more, but the ride was rougher. That's not a free lunch; it's a different risk profile.</p>
+
+    <h2>Why the screened version can win — and why that's fragile</h2>
+    <p>The reason isn't magic, and understanding it is the whole point. When you screen the S&P 500 for halal compliance, the single biggest thing you remove is the <b>financial sector</b> — banks, insurers, and other interest-based businesses, roughly an eighth of the index. In a market-cap-weighted index, whatever you remove gets redistributed to what remains. And what remains is heavily <span class="hl">technology</span>.</p>
+    <p>So a halal S&P fund is, structurally, a tech-tilted S&P fund. Over the last few years, technology has been the market's engine, so that tilt paid off and the screened version pulled ahead. The mirror image is the risk: if tech has a bad stretch, or financials rally, the same tilt works against you. The screening didn't make SPUS <em>better</em>; it made it <em>different</em>, in a direction that happened to be rewarded recently.</p>
+
+    <div class="tradeoff">
+      <div class="to-card give">
+        <h3>What you give up</h3>
+        <ul>
+          <li>A higher fee: roughly 0.45% versus about 0.03% for a plain S&P 500 fund like VOO</li>
+          <li>Some diversification: no financials, and heavier concentration in a few mega-cap tech names</li>
+          <li>A smoother ride: modestly higher volatility and deeper drawdowns</li>
+          <li>A small yearly purification step on a sliver of dividend income</li>
+        </ul>
+      </div>
+      <div class="to-card get">
+        <h3>What you get</h3>
+        <ul>
+          <li>Faith-aligned ownership, screened at the holdings level rather than after the fact</li>
+          <li>Very S&P-like exposure: the same mega-cap U.S. companies, minus the excluded sectors</li>
+          <li>A tech tilt that, in growth-led markets, has recently meant competitive or better returns</li>
+          <li>A simple, liquid, one-ticker way to be invested</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <b>The honest answer to the reader's question:</b> over this particular window, you gave up almost nothing on return and actually came out a little ahead. But that outperformance was borrowed from a tech tilt, not granted by the screening itself. Expect the halal S&P to behave like a slightly more concentrated, slightly more volatile cousin of the index. Some years that wins, some years it lags. The fee is the one cost you pay every single year regardless.</p>
+    </div>
+
+    <h2>Three caveats worth stating plainly</h2>
+    <p><b>Three years is a tech-friendly window.</b> This stretch was unusually kind to the exact sectors a halal screen overweights. A period where financials or value outperform could easily flip the ranking, and there have been such periods before.</p>
+    <p><b>The fee gap is certain; the outperformance isn't.</b> The ~0.45% versus ~0.03% difference is guaranteed to compound against you every year. The return edge is a maybe. Don't count on the latter to cancel the former.</p>
+    <p><b>Screening is about ownership, not just performance.</b> For most Muslim investors the question isn't really "which returns more" — it's that owning shares of non-compliant businesses is itself the issue, so a conventional fund isn't an option regardless of its return. The good news the data delivers is that honoring that constraint has not required a performance sacrifice recently. That's a reassurance, not a strategy.</p>
+    <p>If the reader's fear was that faith-screening means settling for less, the last three years say otherwise. Just don't mistake a favorable tailwind for a permanent edge.</p>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <p>Data: monthly "growth of $1,000" series, May 2023 – May 2026 (rescaled from a $10,000 comparison export), for SPUS and a standard S&P 500 total-return benchmark. Total returns computed first-to-last; annualized figures over three years; volatility is the standard deviation of monthly returns annualized by √12; drawdown is the worst peak-to-trough decline in the series. Sector and screening details from public fund and index documentation. SPUS expense ratio ~0.45%; conventional S&P 500 ETFs ~0.03%.</p>
+    <p>Written in a personal capacity — personal views only, not investment or religious advice. Past performance does not predict future results. Got a comparison you'd like to see? <a href="mailto:practicingEconomist@gmail.com">practicingEconomist@gmail.com</a>.</p>
+  </div>
+</footer>
+
+<script>
+const RAW = {"dates": ["2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05"], "SP500": [1000.0, 1066.1, 1100.3, 1082.8, 1031.2, 1009.5, 1101.7, 1151.7, 1171.1, 1233.6, 1273.3, 1221.3, 1281.9, 1327.9, 1344.0, 1376.6, 1406.0, 1393.3, 1475.1, 1439.9, 1480.0, 1460.7, 1378.4, 1369.0, 1455.2, 1529.2, 1563.5, 1595.2, 1653.5, 1692.2, 1696.3, 1697.4, 1722.0, 1708.9, 1623.8, 1794.2, 1888.6], "SPUS": [1000.0, 1066.5, 1096.7, 1082.1, 1023.6, 994.2, 1089.0, 1134.4, 1156.4, 1228.0, 1259.6, 1210.2, 1275.7, 1347.1, 1336.8, 1359.5, 1392.8, 1371.0, 1435.0, 1435.0, 1455.6, 1409.8, 1303.8, 1299.7, 1403.3, 1491.9, 1543.2, 1575.5, 1662.2, 1735.8, 1727.3, 1720.0, 1734.5, 1717.4, 1625.5, 1814.8, 1976.4], "AMAGX": [1000.0, 1060.5, 1072.2, 1067.7, 1013.8, 1001.9, 1097.2, 1152.8, 1190.4, 1252.5, 1275.0, 1225.1, 1260.3, 1335.3, 1312.9, 1356.0, 1358.7, 1308.2, 1354.5, 1334.3, 1346.4, 1320.4, 1223.7, 1236.3, 1325.4, 1395.0, 1412.3, 1429.3, 1528.2, 1596.7, 1595.5, 1569.4, 1607.8, 1626.4, 1518.9, 1719.2, 1807.6]};
+const COLORS = {SPUS:'#2e7d5b', SP500:'#1d2733'};
+
+new Chart(document.getElementById('chart'),{
+  type:'line',
+  data:{labels:RAW.dates,datasets:[
+    {label:'SPUS (halal S&P 500)',data:RAW.SPUS,borderColor:COLORS.SPUS,backgroundColor:'transparent',borderWidth:2.5,pointRadius:0,tension:.15},
+    {label:'Standard S&P 500',data:RAW.SP500,borderColor:COLORS.SP500,backgroundColor:'transparent',borderWidth:2,borderDash:[5,3],pointRadius:0,tension:.15}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,
+    interaction:{mode:'index',intersect:false},
+    plugins:{legend:{position:'top',labels:{boxWidth:12,boxHeight:12,font:{family:"'Spline Sans Mono',monospace",size:11},color:'#4a5a6a'}},
+      tooltip:{callbacks:{label:c=>c.dataset.label+': $'+Math.round(c.parsed.y).toLocaleString()}}},
+    scales:{
+      x:{grid:{display:false},ticks:{maxTicksLimit:7,color:'#8b99a5',font:{family:"'Spline Sans Mono',monospace",size:10.5}}},
+      y:{grid:{color:'#e2e7ea'},ticks:{color:'#8b99a5',font:{family:"'Spline Sans Mono',monospace",size:10.5},callback:v=>'$'+v.toLocaleString()}}
+    }}});
+
+document.getElementById('chartNote').textContent =
+  `Ending values: SPUS $${Math.round(RAW.SPUS[RAW.SPUS.length-1]).toLocaleString()} · Standard S&P 500 $${Math.round(RAW.SP500[RAW.SP500.length-1]).toLocaleString()}`;
+
+const STATS={
+  SPUS:{total:'+97.6%',cagr:'25.5%/yr',vol:'15.5%',mdd:'−10.7%'},
+  SP500:{total:'+88.9%',cagr:'23.6%/yr',vol:'13.3%',mdd:'−8.3%'}
+};
+const LABELS={SPUS:'SPUS (halal S&P 500)',SP500:'Standard S&P 500'};
+const statsEl=document.getElementById('stats');
+['SPUS','SP500'].forEach(t=>{
+  const s=STATS[t];
+  const d=document.createElement('div');
+  d.className='stat';
+  d.innerHTML=`<div class="tkr"><span class="dot" style="background:${COLORS[t]}"></span>${LABELS[t]}</div>
+    <table>
+      <tr><td class="muted">Total return</td><td>${s.total}</td></tr>
+      <tr><td class="muted">Annualized</td><td>${s.cagr}</td></tr>
+      <tr><td class="muted">Volatility</td><td>${s.vol}</td></tr>
+      <tr><td class="muted">Worst drawdown</td><td>${s.mdd}</td></tr>
+    </table>`;
+  statsEl.appendChild(d);
+});
+</script>
+</body>
+</html>
