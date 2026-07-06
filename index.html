@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Start Anyway — A Gentle Guide to Halal Investing for the Hesitant</title>
+<title>Practicing Economist</title>
+<meta name="description" content="Practicing Economist — Salman Khan's personal site for data explorations and occasional writing on personal finance and decision-making. Personal views only.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Public+Sans:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Public+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --night:#1d2733;
@@ -17,433 +17,104 @@
   --sage:#2e7d5b;
   --sage-soft:#e3f0e9;
   --amber:#c07a2d;
-  --amber-soft:#f7ecdc;
-  --sky:#2f6fa8;
   --mono:'Spline Sans Mono',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--mist);color:var(--night);font-family:'Public Sans',sans-serif;font-size:17px;line-height:1.7}
-.wrap{max-width:820px;margin:0 auto;padding:0 22px}
-.wrap-wide{max-width:1000px;margin:0 auto;padding:0 22px}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px}
 
-header{background:var(--night);color:#f2f4f5;padding:76px 0 60px}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9fc3ae;margin-bottom:22px}
-h1{font-family:'Lora',serif;font-weight:500;font-size:clamp(34px,5.2vw,54px);line-height:1.12;max-width:15em}
-.dek{font-family:'Lora',serif;font-style:italic;font-size:clamp(17px,2.3vw,21px);color:#b9c4cc;margin-top:20px;max-width:33em;line-height:1.6}
-.byline{font-family:var(--mono);font-size:12px;color:#8b99a5;margin-top:26px}
+header{padding:84px 0 40px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:18px}
+h1{font-family:'Lora',serif;font-weight:600;font-size:clamp(38px,6vw,54px);line-height:1.1}
+.role{font-family:'Lora',serif;font-style:italic;font-size:clamp(17px,2.4vw,21px);color:var(--slate);margin-top:12px}
 
-article{padding:54px 0 30px}
-article p{margin-bottom:1.4em;max-width:41em}
-article h2{font-family:'Lora',serif;font-weight:600;font-size:28px;margin:2em 0 .7em}
-article h2 .step{display:inline-block;font-family:var(--mono);font-size:13px;font-weight:500;background:var(--sage-soft);color:var(--sage);border-radius:6px;padding:3px 9px;margin-right:10px;vertical-align:middle}
-.hl{background:linear-gradient(transparent 55%, var(--amber-soft) 55%);padding:0 2px}
-.lead-line{font-family:'Lora',serif;font-size:clamp(19px,2.6vw,24px);line-height:1.5;max-width:30em;margin-bottom:1.2em}
-.thoughts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 1.8em}
-.thought{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:10px;padding:16px 18px}
-.thought .t-num{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
-.thought .t-text{font-family:'Lora',serif;font-style:italic;font-size:17.5px;line-height:1.45}
-.big-q{font-family:'Lora',serif;font-weight:600;font-size:clamp(20px,2.8vw,25px);line-height:1.4;margin:1.6em 0 .8em;max-width:26em}
-.about-me{display:flex;gap:14px;align-items:flex-start;background:var(--sage-soft);border-radius:12px;padding:16px 18px;margin:0 0 1.8em;max-width:42em}
-.about-me .hand{font-size:26px;line-height:1;flex:none;margin-top:2px}
-.about-me p{margin:0;font-size:15.5px;line-height:1.6}
-.checkrow{list-style:none;margin:.4em 0 1.4em;padding:0;max-width:40em}
-.checkrow li{position:relative;padding:0 0 10px 30px;font-size:16px;line-height:1.55}
-.checkrow li::before{content:'✓';position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--sage-soft);color:var(--sage);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
-.tickers{display:inline-flex;flex-wrap:wrap;gap:6px;vertical-align:middle}
-.tick{font-family:var(--mono);font-size:13px;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
-@media (max-width:560px){.thoughts{grid-template-columns:1fr}}
-.num{font-family:var(--mono);color:var(--sage);font-weight:500}
+.bio{padding:8px 0 34px;border-bottom:1px solid var(--line)}
+.bio p{margin-bottom:1.2em;max-width:38em}
 
-.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;margin:38px 0;box-shadow:0 1px 4px rgba(29,39,51,.06)}
-.panel-title{font-family:'Lora',serif;font-weight:600;font-size:21px;margin-bottom:4px}
-.panel-sub{font-family:var(--mono);font-size:12px;color:var(--slate);margin-bottom:20px}
+section{padding:38px 0 8px}
+.section-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:18px}
 
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
-.chip{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;padding:8px 13px;border:1px solid var(--line);border-radius:999px;background:var(--mist);cursor:pointer;user-select:none;transition:all .15s;color:var(--slate)}
-.chip:hover{border-color:var(--slate)}
-.chip:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
-.chip .dot{width:10px;height:10px;border-radius:3px;background:var(--line);flex:none}
-.chip.on{background:var(--night);color:#eef1f2;border-color:var(--night)}
-.chip.on .dot{background:var(--chip-color)}
+.cards{display:grid;gap:14px}
+a.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;text-decoration:none;color:var(--night);transition:border-color .15s, transform .15s}
+a.card:hover{border-color:var(--sage);transform:translateY(-1px)}
+.card-kicker{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+.card-title{font-family:'Lora',serif;font-weight:600;font-size:20px;line-height:1.35}
+.card-desc{font-size:14.5px;color:var(--slate);margin-top:6px;line-height:1.55}
+.card-arrow{font-family:var(--mono);font-size:13px;color:var(--sage);margin-top:10px}
 
-.chart-box{position:relative;height:320px}
-.chart-note{font-family:var(--mono);font-size:11.5px;color:var(--slate);margin-top:12px;text-align:center}
+.links{display:flex;flex-wrap:wrap;gap:10px;padding:8px 0 0}
+a.pill{font-family:var(--mono);font-size:13px;color:var(--night);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 16px;text-decoration:none;transition:border-color .15s}
+a.pill:hover{border-color:var(--sage);color:var(--sage)}
 
-.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin:8px 0 22px}
-.ctrl label{display:block;font-family:var(--mono);font-size:12px;color:var(--slate);margin-bottom:8px}
-.ctrl label b{color:var(--night);font-size:14px}
-input[type=range]{width:100%;accent-color:var(--sage);cursor:pointer}
-input[type=range]:focus-visible{outline:2px solid var(--sky);outline-offset:4px}
+footer{padding:56px 0 60px;font-family:var(--mono);font-size:12px;color:var(--slate)}
 
-.outcome{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
-.outcome-card{border-radius:12px;padding:18px 20px}
-.outcome-card.cash{background:var(--mist);border:1px solid var(--line)}
-.outcome-card.invest{background:var(--sage-soft);border:1px solid #bcd9c9}
-.outcome-card .lbl{font-family:var(--mono);font-size:12px;color:var(--slate)}
-.outcome-card .big{font-family:var(--mono);font-size:clamp(22px,3.4vw,30px);font-weight:500;margin-top:6px}
-.outcome-card.invest .big{color:var(--sage)}
-.outcome-card .sub{font-family:var(--mono);font-size:11.5px;color:var(--slate);margin-top:4px}
-.gap-line{grid-column:1/-1;text-align:center;font-family:var(--mono);font-size:13.5px;background:var(--amber-soft);border-radius:10px;padding:12px}
-.gap-line b{color:var(--amber)}
-
-.plan{list-style:none;counter-reset:step;margin:24px 0}
-.plan li{position:relative;padding:0 0 26px 52px;max-width:40em}
-.plan li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;background:var(--sage-soft);color:var(--sage);font-family:var(--mono);font-weight:500;font-size:15px;display:flex;align-items:center;justify-content:center}
-.plan li::after{content:'';position:absolute;left:16.5px;top:38px;bottom:4px;width:1px;background:var(--line)}
-.plan li:last-child::after{display:none}
-.plan li b{font-weight:600}
-.plan li p{margin:2px 0 0;font-size:15.5px;color:var(--slate)}
-
-.note{font-size:14.5px;color:var(--slate);border-left:3px solid var(--amber);padding-left:16px;margin:1.6em 0;max-width:40em}
-
-/* quiz */
-.quiz-q{margin-bottom:26px}
-.quiz-q:last-child{margin-bottom:0}
-.quiz-prompt{font-weight:600;font-size:16.5px;margin-bottom:12px;max-width:38em}
-.quiz-opts{display:flex;flex-wrap:wrap;gap:8px}
-.quiz-opt{font-family:var(--mono);font-size:13.5px;padding:9px 16px;border:1.5px solid var(--line);border-radius:9px;background:var(--card);cursor:pointer;transition:all .15s;color:var(--night)}
-.quiz-opt:hover{border-color:var(--slate)}
-.quiz-opt:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
-.quiz-opt.picked{border-color:var(--night);background:var(--night);color:#eef1f2}
-.quiz-opt.correct-reveal{border-color:var(--sage);background:var(--sage-soft);color:var(--night)}
-.quiz-opt:disabled{cursor:default;opacity:.85}
-.quiz-reveal{display:none;margin-top:14px;border-radius:10px;padding:14px 16px;font-size:14.5px;line-height:1.55;background:var(--sage-soft)}
-.quiz-reveal.show{display:block}
-.quiz-reveal b{font-weight:600}
-.guess-bars{margin-top:12px}
-.gbar-row{display:flex;align-items:center;gap:10px;margin-bottom:6px;font-family:var(--mono);font-size:11.5px;color:var(--slate)}
-.gbar-lbl{width:110px;flex:none;text-align:right}
-.gbar-track{flex:1;height:14px;background:rgba(29,39,51,.07);border-radius:4px;overflow:hidden}
-.gbar-fill{height:100%;background:#9db8c9;border-radius:4px;width:0;transition:width .6s ease}
-.gbar-row.yours .gbar-fill{background:var(--amber)}
-.gbar-row.yours .gbar-lbl{color:var(--amber);font-weight:500}
-.gbar-pct{width:36px;flex:none}
-.guess-note{font-family:var(--mono);font-size:10.5px;color:var(--slate);margin-top:8px;opacity:.8}
-
-footer{border-top:1px solid var(--line);padding:34px 0 60px;font-size:13.5px;color:var(--slate)}
-footer .wrap{max-width:820px}
-footer p{margin-bottom:.9em;max-width:44em}
-
-@media (max-width:640px){
-  header{padding:52px 0 42px}
-  .panel{padding:18px;margin-left:-10px;margin-right:-10px}
-  .chart-box{height:260px}
-  .outcome{grid-template-columns:1fr}
-}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:640px){header{padding:56px 0 32px}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <div class="eyebrow">Investing for the hesitant · A halal-funds case study</div>
-    <h1>You don't need the perfect fund. You need a first month.</h1>
-    <p class="dek">Most people who never invest aren't reckless. They're careful. So careful that they wait for a certainty that never comes. This guide is for anyone on the sidelines, told through the story of one careful group in particular: Muslims who assumed investing wasn't an option for them, then froze when they learned it was.</p>
-    <p class="byline">Fund data: daily closes, Jul 2024 – Jul 2026 · calculators run live in this page</p>
+    <div class="eyebrow">Writing · Data · Decisions</div>
+    <h1>Practicing Economist</h1>
+    <p class="role">An economist by day, writing here off the clock</p>
   </div>
 </header>
 
-<article>
+<div class="bio">
   <div class="wrap">
-    <p class="lead-line">Been meaning to invest for years? Chances are one of these two thoughts is doing the stalling:</p>
-    <div class="thoughts">
-      <div class="thought"><div class="t-num">Thought one</div><div class="t-text">"Investing isn't for people like me."</div></div>
-      <div class="thought"><div class="t-num">Thought two</div><div class="t-text">"Too many options. What if I pick wrong?"</div></div>
-    </div>
-    <div class="about-me">
-      <div class="hand">👋</div>
-      <p>Quick note about me: I was one of those people until very recently. It took nudges from a couple of friends before I finally started. I'm new and no expert, but maybe that's the point. Experts open with do's and don'ts, and the anxious beginner is lost at the outset. Someone who just crossed the starting line can say something more useful: <span class="hl">if I could get past this, so can you.</span></p>
-    </div>
-    <p><b>Thought one</b> hits hardest in the group where I've watched it up close: practicing Muslims. Many assume ordinary funds can't meet Islamic requirements, so investing is off-limits. It isn't. Multiple U.S.-listed funds are built for exactly this:</p>
-    <ul class="checkrow">
-      <li>They screen out prohibited industries such as alcohol and gambling</li>
-      <li>They exclude companies too reliant on interest-bearing debt or interest income</li>
-      <li>They purify the small amounts that slip through</li>
-      <li>And they trade in any normal brokerage account</li>
-    </ul>
-    <p><b>Thought two</b> follows right behind. You may have heard of one or more of these: <span class="tickers"><span class="tick">SPUS</span><span class="tick">HLAL</span><span class="tick">SPWO</span><span class="tick">UMMA</span><span class="tick">SPTE</span></span>. After waiting this long, you refuse to finally act and pick wrong. So the tabs stay open, and another year passes. Not Muslim? Swap in your own "not for people like me" — too young, too late, not a finance person. Same mistake, same fix.</p>
-    <p class="big-q">So which fund is the right one?</p>
-    <p><span class="hl"><b>For a beginner, it barely matters.</b></span> The mainstream halal equity funds are highly correlated: the U.S. ones move nearly in lockstep, and so do the global ones. Picking "wrong" between them is almost impossible. What costs you is not picking at all.</p>
-
-    <h2><span class="step">Guess first</span>Before the charts, what does your gut say?</h2>
-    <p>A prediction made before seeing the answer sticks far better than a fact read passively. So here are three quick questions. No grades, no email capture, and your answers stay on your device. I did the basic math so you don't have to; after each guess, you'll see the real number from the data.</p>
+    <p>I'm Salman Khan, an economist. By training and trade, I run research studies and work with data for a living. This site is where the same habits get pointed at everyday questions: personal finance, decision-making, and the gap between what the numbers say and what we actually do.</p>
+    <p>Everything here is written in my personal capacity and reflects my personal views only, not those of any employer or institution. It's education, not advice.</p>
   </div>
+</div>
 
-  <div class="wrap-wide">
-    <div class="panel" id="quizPanel">
-      <div class="panel-title">Three guesses</div>
-      <div class="panel-sub">Tap an answer · reveal is instant · nothing is submitted anywhere</div>
-
-      <div class="quiz-q" data-q="0">
-        <div class="quiz-prompt">1. $100 invested in a halal U.S. equity ETF two years ago — what's it worth today?</div>
-        <div class="quiz-opts" role="group">
-          <button class="quiz-opt" data-i="0">Less than $100</button>
-          <button class="quiz-opt" data-i="1">$100–$115</button>
-          <button class="quiz-opt" data-i="2">$115–$130</button>
-          <button class="quiz-opt" data-i="3" data-correct>More than $130</button>
-        </div>
-        <div class="quiz-reveal">
-          <b>Answer: about $140.</b> SPUS turned $100 into roughly $140, and HLAL did about the same, over this specific two-year window (Jul 2024 to Jul 2026). If you guessed low, you're not alone. That instinct is exactly what keeps careful people on the sidelines. (Caveat: this was a strong period, and long-run averages are more modest.)
-        </div>
-      </div>
-
-      <div class="quiz-q" data-q="1">
-        <div class="quiz-prompt">2. Same two years, five popular halal equity ETFs. What was the gap between the best and worst performer?</div>
-        <div class="quiz-opts" role="group">
-          <button class="quiz-opt" data-i="0">Under 10 points</button>
-          <button class="quiz-opt" data-i="1">10–25 points</button>
-          <button class="quiz-opt" data-i="2" data-correct>25–45 points</button>
-          <button class="quiz-opt" data-i="3">More than 45 points</button>
-        </div>
-        <div class="quiz-reveal">
-          <b>Answer: about 35 points.</b> The "worst" pick (HLAL, +40%) and the "best" (SPTE, +75%) were both solid outcomes, because every single fund finished up. The scenario people fear, picking the one fund that loses while the rest gain, wasn't on the menu. The only losing move was the $100 that stayed in checking.
-        </div>
-      </div>
-
-      <div class="quiz-q" data-q="2">
-        <div class="quiz-prompt">3. How much do you need to start?</div>
-        <div class="quiz-opts" role="group">
-          <button class="quiz-opt" data-i="0">At least $5,000</button>
-          <button class="quiz-opt" data-i="1">At least $1,000</button>
-          <button class="quiz-opt" data-i="2">At least $500</button>
-          <button class="quiz-opt" data-i="3" data-correct>Under $50</button>
-        </div>
-        <div class="quiz-reveal">
-          <b>Answer: under $50, often under $5.</b> Major brokerages now offer fractional shares with no commissions, so a $25 monthly auto-buy is a real, functioning investment plan. The minimum-capital barrier most people imagine hasn't existed for years.
-        </div>
-      </div>
-    </div>
-  </div>
-
+<section>
   <div class="wrap">
-    <p>If your guesses ran pessimistic, you're in good company. That's the norm, and it's exactly the miscalibration that keeps careful people out of the market. Now the actual data.</p>
-
-    <h2><span class="step">See it</span>They all climb the same mountain</h2>
-    <p>Below is the actual two-year history of five halal equity ETFs, all indexed to $100. Toggle them on and off. Notice that the lines braid around each other: different heights, same direction. The lesson isn't that they're identical. It's that <span class="num">any</span> of them would have gotten a beginner meaningfully invested. And if the halal constraint isn't yours, the same lesson holds for mainstream index funds (think S&P 500 funds like VOO, or Fidelity's FXAIX): the popular choices move together far more than they differ.</p>
-  </div>
-
-  <div class="wrap-wide">
-    <div class="panel">
-      <div class="panel-title">Two years, five funds, one story</div>
-      <div class="panel-sub">Growth of $100 · Jul 2024 → Jul 2026 · toggle any fund</div>
-      <div class="chips" id="chips" role="group" aria-label="Select funds"></div>
-      <div class="chart-box"><canvas id="trendChart"></canvas></div>
-      <p class="chart-note" id="trendNote"></p>
+    <div class="section-label">Start here</div>
+    <div class="cards">
+      <a class="card" href="/halal-investing/">
+        <div class="card-kicker">Personal finance · Interactive</div>
+        <div class="card-title">You don't need the perfect fund. You need a first month.</div>
+        <div class="card-desc">A data-backed nudge for hesitant first-time investors, told through halal ETFs: guess-first quizzes, two years of real fund data, and a cost-of-inaction calculator.</div>
+        <div class="card-arrow">Read →</div>
+      </a>
     </div>
   </div>
+</section>
 
+<section>
   <div class="wrap">
-    <p>Every one of these finished well above where it started. The spread between the "best" and "worst" pick matters far less than the spread between <em>investing and not investing</em>. Which brings us to the uncomfortable part.</p>
-
-    <h2><span class="step">Feel it</span>The cost of waiting is invisible — until you calculate it</h2>
-    <p>Money sitting in a checking account feels safe. But it quietly loses purchasing power to inflation, and it forfeits the compounding that markets have historically provided. Play with the sliders, using a modest return assumption rather than the bull-market numbers above, and see what your own hesitation is priced at.</p>
-  </div>
-
-  <div class="wrap-wide">
-    <div class="panel">
-      <div class="panel-title">The cost-of-inaction calculator</div>
-      <div class="panel-sub">Compare leaving cash idle vs investing it monthly · adjust everything</div>
-      <div class="controls">
-        <div class="ctrl">
-          <label>Monthly amount: <b id="amtLbl"></b></label>
-          <input type="range" id="amt" min="25" max="1000" step="25" value="200" aria-label="Monthly investment amount">
-        </div>
-        <div class="ctrl">
-          <label>Years: <b id="yrsLbl"></b></label>
-          <input type="range" id="yrs" min="1" max="30" step="1" value="15" aria-label="Number of years">
-        </div>
-        <div class="ctrl">
-          <label>Assumed annual return: <b id="retLbl"></b></label>
-          <input type="range" id="ret" min="2" max="12" step="0.5" value="7" aria-label="Assumed annual return percent">
-        </div>
-        <div class="ctrl">
-          <label>Inflation: <b id="infLbl"></b></label>
-          <input type="range" id="inf" min="0" max="6" step="0.5" value="3" aria-label="Assumed inflation percent">
-        </div>
-      </div>
-      <div class="chart-box" style="height:280px"><canvas id="gapChart"></canvas></div>
-      <div class="outcome" id="outcome"></div>
+    <div class="section-label">Reader questions</div>
+    <p style="font-size:15px;color:var(--slate);margin:-6px 0 18px;max-width:38em;">Follow-ups sparked by readers of the first post. Have one of your own? <a href="mailto:practicingEconomist@gmail.com" style="color:var(--sage);">Send it over.</a></p>
+    <div class="cards">
+      <a class="card" href="/halal-investing/halal-vs-sp500.html">
+        <div class="card-kicker">Reader question · Interactive</div>
+        <div class="card-title">What does halal investing actually cost you?</div>
+        <div class="card-desc">Does screening for faith mean giving up returns versus a plain S&P 500? Three years of data, with a surprising answer and the honest reason behind it.</div>
+        <div class="card-arrow">Read →</div>
+      </a>
+      <a class="card" href="/halal-investing/amagx-vs-halal-etfs.html">
+        <div class="card-kicker">Reader question · Interactive</div>
+        <div class="card-title">Does the old guard still win?</div>
+        <div class="card-desc">How does AMAGX, the longest-running halal fund in America, stack up against the newer ETFs? A look at whether the veteran still earns its place.</div>
+        <div class="card-arrow">Read →</div>
+      </a>
     </div>
   </div>
+</section>
 
+<section>
   <div class="wrap">
-    <p class="note">The return slider is an assumption, not a promise. Markets have long stretches of flat or negative returns, and the two-year window above was unusually strong. That's exactly why the calculator defaults to 7% rather than 20%. Even at modest assumptions, the gap compounds.</p>
-
-    <h2><span class="step">Start it</span>The gradual way in — no lump sums, no heroics</h2>
-    <p>You don't need to move your savings in one dramatic transfer. The beginner-proof approach is <b>dollar-cost averaging</b>: a fixed amount, every month, into one or two funds, automatically. Some months you buy high, some months low, and you never have to time anything.</p>
-
-    <ol class="plan">
-      <li><b>Open a brokerage account</b><p>Any major U.S. brokerage works, since halal ETFs trade like any stock. Look for one with no commissions and fractional shares, so even $25 buys something.</p></li>
-      <li><b>Pick one fund. Two at most.</b><p>One U.S. halal equity fund (SPUS or HLAL, and the data says the choice between them is nearly a coin flip), and optionally one global fund (SPWO or UMMA) for geographic spread. Stop there. More funds now means more decisions, not more diversification.</p></li>
-      <li><b>Automate a small monthly buy</b><p>Choose a number that doesn't scare you ($50, $100, $200) and schedule it. The habit matters more than the amount in year one.</p></li>
-      <li><b>Ignore it for six months</b><p>No checking daily. Prices will wobble, and that's the deal. Your only job is to let the automation run.</p></li>
-      <li><b>Then, and only then, get fancy</b><p>Once the habit is boring, you can explore diversifiers such as gold (GLDM) and sukuk (SPSK), which genuinely move differently from equities. That's a later chapter, not a prerequisite.</p></li>
-    </ol>
-
-    <h2>The honest fine print</h2>
-    <p>Past performance doesn't guarantee anything. The trend lines above describe what happened, not what will. Halal funds carry expense ratios (roughly 0.18% to 0.65% for the funds mentioned). Screening methodologies differ slightly between fund families, so if strictness matters to you, read each fund's published methodology or ask a scholar you trust. And this page is education, not personalized investment or religious advice.</p>
-    <p>But here's the thing the fine print can't undo: <span class="hl">every year of waiting for the perfect answer is a year of compounding you don't get back.</span> Pick one fund. Set up $50 a month. You can refine everything else later, from inside the market instead of outside it.</p>
+    <div class="section-label">Get in touch</div>
+    <div class="links">
+      <a class="pill" href="mailto:practicingEconomist@gmail.com">practicingEconomist@gmail.com</a>
+    </div>
   </div>
-</article>
+</section>
 
 <footer>
-  <div class="wrap">
-    <p>Fund trend data: actual daily closing prices Jul 1 2024 – Jul 1 2026, indexed to 100. Calculator uses monthly compounding of user-set assumptions; "cash" scenario assumes 0% nominal return, with inflation applied to show real purchasing power. Educational content only — not investment, tax, legal, or religious advice.</p>
-  </div>
+  <div class="wrap">© Salman Khan, writing as Practicing Economist · Personal views only · Built by hand, no tracking</div>
 </footer>
 
-<script>
-const RAW = {"dates": ["2024-07-01", "2024-07-02", "2024-07-03", "2024-07-05", "2024-07-08", "2024-07-09", "2024-07-10", "2024-07-11", "2024-07-12", "2024-07-15", "2024-07-16", "2024-07-17", "2024-07-18", "2024-07-19", "2024-07-22", "2024-07-23", "2024-07-24", "2024-07-25", "2024-07-26", "2024-07-29", "2024-07-30", "2024-07-31", "2024-08-01", "2024-08-02", "2024-08-05", "2024-08-06", "2024-08-07", "2024-08-08", "2024-08-09", "2024-08-12", "2024-08-13", "2024-08-14", "2024-08-15", "2024-08-16", "2024-08-19", "2024-08-20", "2024-08-21", "2024-08-22", "2024-08-23", "2024-08-26", "2024-08-27", "2024-08-28", "2024-08-29", "2024-08-30", "2024-09-03", "2024-09-04", "2024-09-05", "2024-09-06", "2024-09-09", "2024-09-10", "2024-09-11", "2024-09-12", "2024-09-13", "2024-09-16", "2024-09-17", "2024-09-18", "2024-09-19", "2024-09-20", "2024-09-23", "2024-09-24", "2024-09-25", "2024-09-26", "2024-09-27", "2024-09-30", "2024-10-01", "2024-10-02", "2024-10-03", "2024-10-04", "2024-10-07", "2024-10-08", "2024-10-09", "2024-10-10", "2024-10-11", "2024-10-14", "2024-10-15", "2024-10-16", "2024-10-17", "2024-10-18", "2024-10-21", "2024-10-22", "2024-10-23", "2024-10-24", "2024-10-25", "2024-10-28", "2024-10-29", "2024-10-30", "2024-10-31", "2024-11-01", "2024-11-04", "2024-11-05", "2024-11-06", "2024-11-07", "2024-11-08", "2024-11-11", "2024-11-12", "2024-11-13", "2024-11-14", "2024-11-15", "2024-11-18", "2024-11-19", "2024-11-20", "2024-11-21", "2024-11-22", "2024-11-25", "2024-11-26", "2024-11-27", "2024-11-29", "2024-12-02", "2024-12-03", "2024-12-04", "2024-12-05", "2024-12-06", "2024-12-09", "2024-12-10", "2024-12-11", "2024-12-12", "2024-12-13", "2024-12-16", "2024-12-17", "2024-12-18", "2024-12-19", "2024-12-20", "2024-12-23", "2024-12-24", "2024-12-26", "2024-12-27", "2024-12-30", "2024-12-31", "2025-01-02", "2025-01-03", "2025-01-06", "2025-01-07", "2025-01-08", "2025-01-10", "2025-01-13", "2025-01-14", "2025-01-15", "2025-01-16", "2025-01-17", "2025-01-21", "2025-01-22", "2025-01-23", "2025-01-24", "2025-01-27", "2025-01-28", "2025-01-29", "2025-01-30", "2025-01-31", "2025-02-03", "2025-02-04", "2025-02-05", "2025-02-06", "2025-02-07", "2025-02-10", "2025-02-11", "2025-02-12", "2025-02-13", "2025-02-14", "2025-02-18", "2025-02-19", "2025-02-20", "2025-02-21", "2025-02-24", "2025-02-25", "2025-02-26", "2025-02-27", "2025-02-28", "2025-03-03", "2025-03-04", "2025-03-05", "2025-03-06", "2025-03-07", "2025-03-10", "2025-03-11", "2025-03-12", "2025-03-13", "2025-03-14", "2025-03-17", "2025-03-18", "2025-03-19", "2025-03-20", "2025-03-21", "2025-03-24", "2025-03-25", "2025-03-26", "2025-03-27", "2025-03-28", "2025-03-31", "2025-04-01", "2025-04-02", "2025-04-03", "2025-04-04", "2025-04-07", "2025-04-08", "2025-04-09", "2025-04-10", "2025-04-11", "2025-04-14", "2025-04-15", "2025-04-16", "2025-04-17", "2025-04-21", "2025-04-22", "2025-04-23", "2025-04-24", "2025-04-25", "2025-04-28", "2025-04-29", "2025-04-30", "2025-05-01", "2025-05-02", "2025-05-05", "2025-05-06", "2025-05-07", "2025-05-08", "2025-05-09", "2025-05-12", "2025-05-13", "2025-05-14", "2025-05-15", "2025-05-16", "2025-05-19", "2025-05-20", "2025-05-21", "2025-05-22", "2025-05-23", "2025-05-27", "2025-05-28", "2025-05-29", "2025-05-30", "2025-06-02", "2025-06-03", "2025-06-04", "2025-06-05", "2025-06-06", "2025-06-09", "2025-06-10", "2025-06-11", "2025-06-12", "2025-06-13", "2025-06-16", "2025-06-17", "2025-06-18", "2025-06-20", "2025-06-23", "2025-06-24", "2025-06-25", "2025-06-26", "2025-06-27", "2025-06-30", "2025-07-01", "2025-07-02", "2025-07-03", "2025-07-07", "2025-07-08", "2025-07-09", "2025-07-10", "2025-07-11", "2025-07-14", "2025-07-15", "2025-07-16", "2025-07-17", "2025-07-18", "2025-07-21", "2025-07-22", "2025-07-23", "2025-07-24", "2025-07-25", "2025-07-28", "2025-07-29", "2025-07-30", "2025-07-31", "2025-08-01", "2025-08-04", "2025-08-05", "2025-08-06", "2025-08-07", "2025-08-08", "2025-08-11", "2025-08-12", "2025-08-13", "2025-08-14", "2025-08-15", "2025-08-18", "2025-08-19", "2025-08-20", "2025-08-21", "2025-08-22", "2025-08-25", "2025-08-26", "2025-08-27", "2025-08-28", "2025-08-29", "2025-09-02", "2025-09-03", "2025-09-04", "2025-09-05", "2025-09-08", "2025-09-09", "2025-09-10", "2025-09-11", "2025-09-12", "2025-09-15", "2025-09-16", "2025-09-17", "2025-09-18", "2025-09-19", "2025-09-22", "2025-09-23", "2025-09-24", "2025-09-25", "2025-09-26", "2025-09-29", "2025-09-30", "2025-10-01", "2025-10-02", "2025-10-03", "2025-10-06", "2025-10-07", "2025-10-08", "2025-10-09", "2025-10-10", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17", "2025-10-20", "2025-10-21", "2025-10-22", "2025-10-23", "2025-10-24", "2025-10-27", "2025-10-28", "2025-10-29", "2025-10-30", "2025-10-31", "2025-11-03", "2025-11-04", "2025-11-05", "2025-11-06", "2025-11-07", "2025-11-10", "2025-11-11", "2025-11-12", "2025-11-13", "2025-11-14", "2025-11-17", "2025-11-18", "2025-11-19", "2025-11-20", "2025-11-21", "2025-11-24", "2025-11-25", "2025-11-26", "2025-11-28", "2025-12-01", "2025-12-02", "2025-12-03", "2025-12-04", "2025-12-05", "2025-12-08", "2025-12-09", "2025-12-10", "2025-12-11", "2025-12-12", "2025-12-15", "2025-12-16", "2025-12-17", "2025-12-18", "2025-12-19", "2025-12-22", "2025-12-23", "2025-12-24", "2025-12-26", "2025-12-29", "2025-12-30", "2025-12-31", "2026-01-02", "2026-01-05", "2026-01-06", "2026-01-07", "2026-01-08", "2026-01-09", "2026-01-12", "2026-01-13", "2026-01-14", "2026-01-15", "2026-01-16", "2026-01-20", "2026-01-21", "2026-01-22", "2026-01-23", "2026-01-26", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-29", "2026-06-30", "2026-07-01"], "SPUS": [40.74, 40.93, 41.25, 41.61, 41.73, 41.65, 42.18, 41.49, 41.82, 41.86, 41.97, 40.98, 40.7, 40.37, 40.94, 40.88, 39.6, 39.17, 39.59, 39.65, 39.19, 40.16, 39.42, 38.52, 37.45, 37.7, 37.32, 38.44, 38.63, 38.74, 39.52, 39.54, 40.48, 40.46, 40.93, 40.87, 41.05, 40.52, 40.98, 40.8, 40.81, 40.39, 40.33, 40.74, 39.62, 39.45, 39.47, 38.64, 39.1, 39.41, 40.03, 40.47, 40.58, 40.51, 40.51, 40.41, 41.3, 41.24, 41.3, 41.57, 41.52, 41.7, 41.6, 41.73, 41.16, 41.17, 41.17, 41.49, 41.12, 41.67, 41.95, 41.97, 42.04, 42.44, 41.95, 42.07, 42.09, 42.26, 42.35, 42.41, 41.72, 41.98, 42.11, 42.24, 42.34, 42.18, 41.02, 41.3, 41.23, 41.68, 42.61, 43.25, 43.29, 43.12, 43.07, 43.02, 42.78, 41.91, 42.14, 42.44, 42.32, 42.36, 42.49, 42.64, 42.81, 42.62, 42.94, 43.31, 43.45, 43.88, 43.83, 43.98, 43.87, 43.7, 44.31, 44.09, 44.12, 44.55, 44.35, 43.1, 43.0, 43.43, 43.82, 44.36, 44.33, 43.76, 43.33, 42.93, 42.87, 43.47, 43.97, 43.33, 43.3, 42.73, 42.67, 42.53, 43.39, 43.17, 43.6, 43.97, 44.42, 44.63, 44.39, 43.2, 43.87, 43.6, 43.71, 43.49, 42.98, 43.53, 43.46, 43.65, 43.06, 43.55, 43.46, 43.35, 43.89, 43.86, 43.9, 44.1, 44.09, 43.19, 42.78, 42.41, 42.55, 41.49, 42.12, 41.11, 40.83, 41.43, 40.6, 40.94, 39.49, 39.3, 39.63, 38.89, 39.76, 39.93, 39.34, 39.79, 39.63, 39.76, 40.51, 40.67, 39.95, 39.72, 38.78, 38.94, 39.05, 39.41, 37.13, 35.14, 34.98, 34.38, 38.1, 36.56, 37.18, 37.55, 37.4, 36.33, 36.36, 35.49, 36.29, 37.17, 38.11, 38.57, 38.56, 38.76, 38.65, 39.16, 39.75, 39.48, 39.07, 39.23, 39.47, 39.53, 41.28, 41.74, 41.94, 42.02, 42.18, 42.14, 42.02, 41.41, 41.47, 41.07, 42.0, 41.77, 41.9, 41.84, 42.11, 42.33, 42.4, 42.26, 42.62, 42.8, 43.17, 42.87, 43.18, 42.64, 43.2, 42.78, 42.82, 42.46, 42.93, 43.51, 43.69, 44.05, 44.28, 44.36, 44.23, 44.67, 44.97, 44.65, 44.65, 45.01, 45.19, 45.08, 45.09, 45.13, 45.17, 45.5, 45.46, 45.63, 45.59, 45.97, 46.08, 46.27, 46.42, 46.32, 46.3, 45.97, 45.32, 46.09, 45.85, 46.22, 46.28, 46.65, 46.63, 47.12, 47.25, 47.19, 46.96, 47.06, 46.67, 46.45, 46.28, 46.98, 46.86, 47.05, 47.22, 47.39, 46.89, 46.51, 46.83, 47.12, 47.07, 47.32, 47.22, 47.71, 48.18, 48.31, 48.56, 48.45, 48.27, 48.5, 48.9, 49.41, 49.04, 48.9, 48.62, 48.88, 49.03, 49.41, 49.84, 49.86, 49.88, 50.2, 49.81, 50.29, 50.15, 48.61, 49.52, 49.15, 49.44, 49.39, 49.63, 50.16, 50.07, 49.86, 50.22, 50.63, 51.41, 51.85, 52.13, 51.66, 51.59, 51.73, 50.94, 51.03, 50.34, 50.2, 51.24, 51.26, 51.33, 50.44, 50.64, 50.22, 49.67, 50.07, 49.14, 49.48, 50.46, 50.75, 51.16, 51.3, 51.17, 51.3, 51.36, 51.43, 51.53, 51.56, 51.54, 51.8, 51.7, 50.86, 50.73, 50.69, 49.86, 50.36, 51.01, 51.28, 51.59, 51.72, 51.75, 51.56, 51.46, 51.07, 51.22, 51.24, 51.44, 51.47, 51.18, 51.57, 51.74, 51.79, 51.45, 51.51, 51.53, 50.39, 51.01, 51.28, 51.41, 51.71, 52.12, 52.27, 51.67, 51.46, 51.69, 51.06, 50.71, 50.03, 51.37, 51.85, 51.74, 51.9, 50.99, 50.84, 50.92, 51.26, 51.11, 51.39, 51.14, 51.58, 52.02, 51.38, 50.93, 51.0, 50.42, 50.74, 50.55, 49.73, 50.43, 50.4, 50.51, 49.64, 49.16, 49.74, 49.83, 49.16, 49.01, 48.16, 48.69, 48.52, 48.8, 47.76, 47.03, 46.65, 48.16, 48.64, 48.61, 48.75, 48.79, 50.04, 50.27, 50.39, 50.91, 51.63, 52.26, 52.39, 53.2, 53.1, 52.75, 53.61, 53.24, 53.8, 53.96, 53.48, 53.35, 53.76, 54.1, 53.91, 54.52, 55.6, 55.46, 56.25, 56.54, 56.33, 56.86, 57.54, 56.74, 56.41, 56.04, 56.79, 56.97, 57.23, 57.83, 57.69, 58.18, 58.54, 59.2, 59.51, 59.0, 58.83, 56.64, 56.98, 56.51, 55.4, 56.52, 56.75, 57.98, 57.26, 56.63, 57.53, 57.48, 56.08, 55.99, 56.15, 55.81, 56.7, 57.5, 57.09], "HLAL": [50.95, 51.43, 51.63, 52.3, 52.22, 52.1, 52.72, 52.03, 52.28, 52.47, 52.63, 51.74, 51.29, 51.01, 51.61, 51.44, 50.04, 49.72, 50.23, 50.4, 50.19, 50.69, 50.13, 49.27, 47.83, 48.0, 47.92, 48.94, 49.19, 49.11, 49.83, 49.77, 50.61, 50.62, 51.03, 50.97, 51.17, 50.66, 51.08, 50.94, 50.96, 50.6, 50.88, 51.24, 50.13, 49.94, 49.98, 49.11, 49.5, 49.71, 50.13, 50.52, 50.72, 50.81, 51.0, 50.91, 52.05, 51.85, 51.93, 51.98, 51.79, 51.95, 51.97, 52.32, 51.71, 51.59, 51.48, 51.84, 51.23, 51.58, 51.86, 51.66, 51.77, 52.28, 52.0, 51.85, 51.83, 52.06, 51.93, 51.96, 51.39, 51.64, 51.82, 51.93, 52.18, 52.07, 50.7, 50.86, 50.71, 51.19, 52.16, 52.85, 52.96, 52.97, 52.76, 52.77, 52.5, 51.65, 52.13, 52.31, 52.3, 52.3, 52.6, 52.94, 53.2, 52.96, 53.25, 53.72, 53.79, 54.16, 54.01, 54.18, 54.26, 54.32, 54.91, 54.67, 54.44, 54.98, 54.98, 53.21, 53.1, 53.47, 53.76, 54.32, 54.26, 53.65, 52.95, 52.74, 52.33, 52.91, 53.43, 53.06, 53.04, 52.36, 52.44, 52.38, 53.51, 53.15, 53.69, 53.76, 54.05, 54.31, 54.12, 53.88, 54.35, 54.27, 54.23, 54.07, 53.48, 53.93, 53.69, 53.55, 52.9, 53.23, 53.28, 53.22, 53.77, 53.78, 53.95, 54.14, 54.18, 53.29, 53.05, 52.6, 52.26, 51.42, 52.15, 51.31, 50.97, 51.53, 50.91, 51.26, 49.62, 49.08, 49.22, 48.33, 49.26, 49.56, 48.99, 49.53, 49.34, 49.54, 50.39, 50.67, 49.99, 49.84, 48.66, 48.84, 49.22, 49.43, 46.89, 44.24, 43.9, 42.93, 47.27, 45.37, 46.19, 46.68, 46.39, 45.35, 45.49, 44.51, 45.65, 46.43, 47.52, 47.94, 48.03, 48.28, 48.28, 48.87, 49.38, 49.09, 48.72, 48.55, 49.0, 49.01, 50.97, 51.3, 51.41, 51.58, 51.84, 51.77, 51.58, 50.87, 50.93, 50.37, 51.54, 51.19, 51.19, 51.09, 51.28, 51.49, 51.57, 51.24, 51.84, 52.03, 52.5, 52.29, 52.44, 51.96, 52.48, 52.01, 52.0, 51.89, 52.37, 52.74, 52.74, 53.11, 53.3, 53.52, 53.47, 53.97, 54.32, 53.7, 53.89, 54.14, 54.31, 54.17, 54.08, 53.83, 53.99, 54.25, 54.23, 54.44, 54.72, 54.95, 54.98, 55.2, 55.24, 55.12, 54.82, 54.95, 54.05, 54.92, 54.65, 54.99, 55.16, 55.94, 55.76, 56.54, 56.72, 56.59, 56.41, 56.32, 56.03, 55.75, 55.52, 56.52, 56.34, 56.41, 56.63, 56.88, 56.57, 56.19, 56.88, 57.28, 57.19, 57.24, 57.29, 56.89, 57.56, 57.82, 58.38, 58.55, 58.58, 58.78, 59.3, 59.57, 59.34, 59.1, 58.82, 59.2, 59.21, 59.33, 59.72, 59.73, 59.7, 60.43, 59.78, 60.18, 59.75, 58.08, 58.98, 58.99, 59.4, 59.15, 59.66, 60.63, 60.58, 60.36, 60.77, 61.12, 62.14, 62.15, 62.22, 61.47, 61.39, 61.4, 60.72, 61.14, 60.52, 60.29, 61.23, 61.54, 61.43, 60.62, 60.61, 60.22, 59.89, 59.92, 58.99, 59.74, 60.93, 61.6, 61.93, 62.42, 62.19, 62.43, 62.62, 62.6, 62.82, 62.42, 62.4, 62.8, 62.71, 62.22, 62.11, 62.01, 61.28, 61.89, 62.29, 62.55, 62.65, 62.78, 62.67, 62.52, 62.48, 62.03, 62.1, 62.4, 62.62, 62.62, 62.55, 63.03, 63.17, 63.12, 62.88, 62.78, 62.67, 61.62, 62.39, 62.89, 62.98, 63.47, 63.95, 64.07, 63.58, 63.21, 63.88, 63.42, 63.2, 62.4, 63.23, 63.55, 63.37, 63.46, 62.33, 62.26, 62.19, 62.5, 62.34, 62.86, 62.42, 62.97, 63.51, 63.19, 62.98, 62.88, 62.17, 62.46, 61.94, 61.09, 61.78, 61.71, 61.91, 60.87, 60.41, 61.1, 61.38, 60.6, 60.47, 59.56, 60.25, 59.95, 60.14, 58.84, 57.91, 57.46, 59.32, 59.9, 59.89, 60.13, 60.22, 61.82, 62.14, 62.12, 62.73, 63.51, 64.35, 64.57, 65.52, 65.27, 64.86, 65.98, 65.59, 66.3, 66.17, 65.76, 65.85, 66.96, 67.53, 67.2, 68.33, 69.33, 68.9, 69.95, 70.16, 69.69, 70.43, 70.77, 70.12, 69.76, 69.26, 70.16, 70.54, 71.11, 72.09, 72.12, 72.7, 73.14, 73.14, 73.6, 73.55, 73.15, 70.53, 70.94, 70.27, 69.0, 70.42, 70.72, 72.35, 71.5, 70.72, 71.84, 71.74, 69.97, 69.61, 69.75, 69.19, 70.5, 71.39, 71.15], "SPWO": [22.12, 22.18, 22.56, 22.79, 22.82, 22.6, 22.95, 22.88, 23.19, 22.97, 22.97, 22.42, 22.27, 22.11, 22.33, 22.21, 21.89, 21.69, 21.86, 21.78, 21.64, 22.29, 21.77, 21.27, 20.88, 21.2, 21.26, 21.73, 21.85, 21.87, 22.21, 22.17, 22.49, 22.64, 22.82, 22.7, 22.93, 22.77, 23.0, 22.75, 22.82, 22.6, 22.76, 22.88, 22.23, 22.2, 22.14, 21.69, 21.91, 21.87, 22.16, 22.34, 22.48, 22.45, 22.47, 22.38, 22.9, 22.65, 22.71, 23.26, 23.14, 23.82, 23.59, 23.41, 23.45, 23.66, 23.56, 23.71, 23.82, 23.51, 23.58, 23.54, 23.78, 23.79, 23.29, 23.26, 23.62, 23.7, 23.58, 23.47, 23.36, 23.24, 23.42, 23.34, 23.32, 23.09, 22.77, 23.32, 22.92, 23.15, 22.84, 23.36, 22.94, 22.8, 22.53, 22.3, 22.29, 22.03, 22.14, 22.32, 22.26, 22.29, 22.35, 22.05, 21.99, 22.16, 22.35, 22.61, 22.78, 22.82, 22.86, 22.82, 23.17, 22.61, 22.78, 22.67, 22.67, 22.59, 22.62, 22.05, 22.09, 22.01, 22.29, 22.26, 22.25, 22.23, 22.05, 21.92, 21.84, 22.05, 22.59, 22.33, 22.27, 21.92, 21.78, 21.95, 22.15, 22.41, 22.42, 22.86, 22.99, 23.06, 23.16, 22.47, 22.67, 22.59, 23.11, 22.91, 22.47, 22.78, 23.0, 22.87, 22.9, 23.12, 23.2, 22.99, 23.33, 23.53, 23.45, 23.31, 23.41, 23.5, 23.23, 23.05, 23.34, 22.7, 22.5, 22.31, 22.58, 23.14, 22.8, 22.93, 22.28, 22.34, 22.49, 22.27, 22.61, 23.02, 22.87, 22.98, 22.92, 22.69, 22.9, 22.75, 22.44, 22.35, 22.09, 21.96, 22.1, 22.16, 21.37, 20.2, 19.82, 19.4, 20.76, 20.46, 21.2, 21.28, 21.33, 21.02, 21.18, 21.02, 21.34, 21.68, 22.02, 22.1, 22.08, 22.16, 22.12, 22.35, 22.86, 22.86, 22.74, 22.61, 22.63, 22.69, 23.16, 23.32, 23.3, 23.27, 23.31, 23.44, 23.58, 23.43, 23.48, 23.36, 23.39, 23.3, 23.37, 23.22, 23.44, 23.44, 23.7, 23.78, 23.85, 23.94, 24.16, 24.17, 24.32, 23.88, 23.93, 23.74, 23.68, 23.39, 23.58, 24.14, 24.05, 24.24, 24.47, 24.41, 24.36, 24.59, 24.6, 24.28, 24.32, 24.46, 24.33, 24.3, 24.36, 24.42, 24.58, 24.8, 24.6, 24.7, 24.75, 25.22, 25.1, 24.95, 24.77, 24.73, 24.5, 24.2, 23.99, 24.31, 24.2, 24.19, 24.45, 24.53, 24.46, 24.74, 24.89, 24.69, 24.75, 24.87, 24.7, 24.59, 24.53, 24.95, 24.82, 24.91, 24.75, 24.78, 24.73, 24.59, 24.67, 24.71, 25.04, 25.3, 25.45, 25.54, 25.88, 25.76, 25.94, 26.15, 26.21, 26.5, 26.26, 26.49, 26.56, 26.5, 26.24, 26.13, 26.35, 26.65, 27.04, 27.16, 27.44, 27.64, 27.31, 27.56, 27.23, 26.26, 27.06, 26.83, 27.25, 27.25, 27.27, 27.56, 27.19, 27.06, 27.3, 27.45, 27.61, 27.57, 27.61, 27.43, 27.39, 27.5, 26.87, 27.01, 26.81, 26.65, 27.15, 27.14, 27.23, 26.84, 26.7, 26.45, 26.28, 26.26, 25.76, 25.94, 26.19, 26.36, 26.7, 26.78, 26.77, 26.83, 27.03, 27.28, 27.11, 27.16, 27.14, 27.56, 27.47, 27.0, 26.96, 26.8, 26.42, 26.77, 26.95, 27.13, 27.32, 27.49, 27.51, 27.38, 27.42, 27.3, 27.94, 28.21, 28.44, 28.24, 28.21, 28.52, 28.96, 28.8, 28.85, 29.13, 29.11, 28.52, 28.88, 29.18, 29.4, 29.51, 30.08, 30.02, 29.87, 29.31, 29.5, 29.44, 29.17, 29.06, 29.92, 30.27, 30.44, 30.92, 30.4, 30.58, 30.42, 30.52, 30.44, 30.88, 30.78, 31.29, 31.54, 31.29, 31.24, 30.72, 29.4, 29.77, 29.11, 28.73, 29.21, 29.22, 29.26, 28.47, 28.31, 28.87, 29.06, 28.49, 28.38, 27.56, 28.27, 28.14, 28.49, 27.44, 27.4, 27.18, 28.2, 28.51, 28.31, 28.54, 28.59, 29.98, 29.92, 30.15, 30.36, 30.91, 30.77, 30.73, 31.35, 31.1, 30.68, 31.34, 30.76, 31.54, 31.58, 31.07, 30.92, 31.69, 31.68, 31.64, 31.92, 33.2, 32.74, 33.19, 33.26, 32.57, 33.17, 33.25, 32.14, 32.04, 31.85, 32.38, 32.8, 32.79, 33.76, 33.84, 34.02, 34.05, 34.62, 34.91, 34.49, 34.52, 32.57, 33.1, 33.24, 32.41, 33.58, 33.75, 34.66, 33.87, 33.92, 35.03, 35.08, 33.42, 33.56, 33.73, 33.3, 33.99, 34.58, 33.52], "UMMA": [24.63, 24.84, 25.13, 25.46, 25.39, 25.31, 25.6, 25.57, 25.81, 25.6, 25.82, 25.15, 24.87, 24.55, 24.97, 24.75, 24.2, 24.07, 24.32, 24.25, 24.17, 24.86, 24.19, 23.59, 23.2, 23.42, 23.54, 24.15, 24.18, 24.24, 24.66, 24.6, 25.03, 25.24, 25.39, 25.3, 25.53, 25.23, 25.66, 25.28, 25.42, 25.34, 25.43, 25.63, 24.8, 24.66, 24.48, 23.99, 24.18, 24.18, 24.44, 24.77, 24.73, 24.84, 24.77, 24.69, 25.39, 24.93, 25.06, 25.55, 25.38, 26.06, 25.8, 25.53, 25.48, 25.6, 25.41, 25.46, 25.52, 25.37, 25.61, 25.4, 25.72, 25.79, 25.25, 25.05, 25.4, 25.45, 25.26, 25.07, 24.97, 24.94, 25.08, 25.11, 25.1, 24.8, 24.44, 24.55, 24.6, 24.72, 24.44, 24.92, 24.6, 24.49, 24.38, 24.11, 24.02, 23.88, 23.9, 24.01, 23.81, 24.02, 24.13, 24.07, 24.1, 24.11, 24.4, 24.68, 24.71, 24.92, 24.91, 25.03, 25.0, 24.56, 24.91, 24.62, 24.61, 24.65, 24.69, 24.02, 23.8, 23.63, 24.04, 23.99, 24.0, 23.81, 23.55, 23.64, 23.66, 23.83, 24.43, 24.19, 24.19, 23.96, 23.6, 23.71, 23.92, 24.28, 24.23, 24.86, 25.0, 25.0, 25.22, 24.51, 24.76, 24.72, 25.06, 24.9, 24.45, 24.94, 25.21, 25.36, 25.15, 25.34, 25.44, 25.4, 25.49, 25.67, 25.72, 25.56, 25.75, 25.63, 25.25, 25.17, 25.34, 24.67, 24.76, 24.55, 24.79, 25.24, 24.92, 25.06, 24.31, 24.21, 24.57, 24.2, 24.75, 25.08, 24.95, 25.1, 25.03, 24.73, 24.89, 24.83, 24.31, 24.3, 24.03, 23.82, 23.88, 23.94, 23.59, 21.93, 21.55, 21.13, 22.7, 22.41, 23.02, 23.16, 23.11, 22.75, 23.09, 22.9, 23.11, 23.59, 23.94, 24.14, 24.02, 24.28, 24.11, 24.34, 24.99, 24.94, 24.65, 24.71, 24.6, 24.61, 25.1, 25.31, 25.14, 25.28, 25.41, 25.41, 25.74, 25.48, 25.57, 25.53, 25.75, 25.58, 25.61, 25.53, 25.79, 25.77, 26.04, 25.99, 26.14, 26.24, 26.38, 26.45, 26.59, 26.13, 26.22, 25.8, 25.76, 25.55, 25.66, 26.11, 26.08, 26.33, 26.6, 26.64, 26.56, 26.77, 26.77, 26.42, 26.61, 26.82, 26.73, 26.51, 26.54, 26.57, 26.58, 26.65, 26.54, 26.55, 26.65, 27.16, 27.0, 26.93, 26.62, 26.55, 26.35, 25.9, 25.64, 25.96, 25.85, 25.76, 26.08, 26.22, 26.0, 26.39, 26.54, 26.36, 26.43, 26.4, 26.34, 26.39, 26.22, 26.63, 26.46, 26.5, 26.52, 26.63, 26.3, 26.02, 26.15, 26.3, 26.61, 26.83, 26.85, 26.94, 27.1, 27.04, 27.19, 27.39, 27.37, 27.76, 27.57, 27.72, 27.89, 27.43, 27.27, 27.14, 27.25, 27.56, 28.13, 28.31, 28.6, 28.92, 28.5, 28.69, 28.4, 27.63, 28.29, 28.22, 28.6, 28.78, 28.79, 29.02, 28.71, 28.48, 28.55, 28.78, 28.96, 28.96, 28.95, 28.89, 28.79, 28.95, 28.29, 28.42, 28.14, 28.11, 28.58, 28.73, 28.87, 28.45, 28.43, 28.12, 27.84, 27.84, 27.34, 27.59, 27.78, 28.23, 28.51, 28.66, 28.61, 28.67, 28.94, 28.98, 29.08, 29.05, 29.08, 29.48, 29.43, 28.86, 29.05, 28.8, 28.42, 28.76, 28.97, 29.09, 29.38, 29.54, 29.74, 29.68, 29.74, 29.61, 30.26, 30.66, 31.07, 30.93, 30.7, 31.21, 31.48, 31.28, 31.28, 31.53, 31.66, 30.87, 31.28, 31.55, 31.87, 31.89, 32.51, 32.53, 32.42, 31.93, 32.24, 32.05, 31.73, 31.57, 32.59, 33.07, 33.2, 33.78, 33.33, 33.55, 33.45, 33.63, 33.52, 34.0, 33.91, 34.57, 34.83, 34.6, 34.66, 33.9, 32.47, 33.13, 32.15, 31.54, 32.21, 32.09, 32.2, 31.41, 31.11, 31.7, 31.86, 31.25, 31.13, 30.15, 30.93, 30.86, 31.1, 29.98, 29.76, 29.52, 30.65, 31.23, 30.85, 31.13, 31.11, 32.77, 32.66, 32.86, 33.13, 33.69, 33.54, 33.48, 34.12, 33.97, 33.28, 33.98, 33.62, 34.2, 34.25, 33.61, 33.49, 34.39, 34.32, 34.13, 34.81, 36.1, 35.63, 36.48, 36.53, 35.81, 36.5, 36.64, 35.63, 35.66, 35.4, 36.23, 36.73, 36.57, 37.75, 37.68, 38.16, 38.33, 38.98, 39.38, 39.07, 39.02, 36.5, 37.24, 37.35, 36.48, 38.33, 38.34, 39.21, 38.73, 38.95, 40.24, 40.24, 38.2, 38.46, 39.33, 38.71, 38.96, 39.48, 38.22], "SPTE": [27.23, 27.34, 27.95, 28.15, 28.42, 28.31, 28.92, 28.26, 28.5, 28.41, 28.38, 27.0, 27.0, 26.5, 27.1, 27.01, 25.85, 25.48, 25.75, 25.68, 25.21, 26.58, 25.33, 24.5, 23.66, 24.37, 24.11, 25.21, 25.2, 25.31, 26.08, 26.2, 26.85, 26.97, 27.15, 27.14, 27.27, 26.61, 27.2, 26.87, 26.99, 26.69, 26.59, 27.04, 25.58, 25.43, 25.46, 24.67, 25.03, 25.23, 26.13, 26.51, 26.54, 26.26, 26.18, 26.06, 27.07, 26.85, 26.79, 27.26, 27.16, 27.67, 27.24, 27.13, 26.8, 26.93, 26.98, 27.22, 27.15, 27.62, 27.83, 27.73, 27.94, 28.24, 27.4, 27.42, 28.0, 27.91, 27.99, 27.91, 27.54, 27.76, 27.88, 27.74, 27.99, 27.69, 26.85, 26.99, 27.0, 27.51, 27.65, 28.27, 28.25, 27.66, 27.87, 27.74, 27.74, 27.15, 27.23, 27.5, 27.28, 27.51, 27.55, 27.48, 27.45, 27.29, 27.73, 28.2, 28.39, 28.74, 28.8, 28.86, 28.69, 28.23, 28.58, 28.51, 28.72, 29.11, 28.89, 28.33, 28.1, 28.38, 28.86, 28.95, 29.0, 28.66, 28.45, 28.13, 28.07, 28.56, 29.29, 28.76, 28.66, 28.24, 27.83, 27.84, 28.41, 28.5, 28.71, 29.0, 29.64, 29.58, 29.42, 27.58, 28.42, 28.49, 28.62, 28.5, 27.96, 28.32, 28.68, 28.79, 28.52, 28.8, 29.04, 28.96, 29.21, 29.33, 29.4, 29.41, 29.4, 28.88, 28.4, 28.18, 28.47, 27.37, 27.42, 26.69, 26.76, 27.49, 26.7, 27.0, 25.89, 25.91, 26.2, 25.72, 26.36, 26.67, 26.34, 26.62, 26.49, 26.4, 26.77, 26.93, 26.21, 26.0, 25.4, 25.28, 25.46, 25.65, 24.08, 22.72, 22.74, 22.05, 25.01, 23.87, 24.56, 24.75, 24.89, 24.04, 23.97, 23.43, 23.9, 24.68, 25.27, 25.6, 25.6, 25.86, 25.92, 26.28, 26.81, 26.81, 26.49, 26.68, 26.88, 26.94, 27.89, 28.52, 28.57, 28.67, 28.6, 28.65, 28.62, 28.27, 28.38, 27.94, 28.65, 28.54, 28.55, 28.37, 28.54, 28.87, 29.13, 28.94, 29.28, 29.34, 29.56, 29.4, 29.76, 29.18, 29.7, 29.43, 29.47, 29.18, 29.53, 30.42, 30.45, 30.78, 30.85, 31.09, 30.86, 31.13, 31.43, 31.12, 31.29, 31.59, 31.49, 31.5, 31.22, 31.71, 31.64, 32.0, 31.78, 31.8, 31.52, 31.8, 31.71, 31.82, 31.81, 31.71, 31.72, 31.48, 30.95, 31.39, 31.24, 31.42, 31.75, 32.05, 31.92, 32.36, 32.5, 32.27, 32.03, 32.2, 31.7, 31.41, 31.2, 31.78, 31.8, 31.83, 32.05, 32.27, 31.64, 31.24, 31.57, 31.75, 32.06, 32.45, 32.61, 33.0, 33.15, 33.25, 33.55, 33.67, 33.56, 34.29, 34.25, 34.91, 34.66, 34.53, 34.22, 34.12, 34.34, 34.38, 34.9, 35.19, 35.3, 35.86, 35.43, 35.89, 35.7, 34.14, 35.18, 34.84, 35.19, 35.2, 35.3, 35.86, 35.63, 35.15, 35.46, 35.91, 36.46, 36.94, 37.02, 36.64, 36.62, 36.67, 35.82, 35.95, 35.16, 34.98, 35.77, 35.48, 35.55, 34.87, 34.9, 34.39, 34.0, 34.2, 33.32, 33.29, 34.12, 34.3, 34.86, 35.07, 35.27, 35.4, 35.59, 35.63, 35.81, 36.03, 36.08, 36.28, 36.14, 35.05, 34.86, 34.69, 33.95, 34.54, 34.94, 35.2, 35.32, 35.4, 35.47, 35.33, 35.34, 35.2, 35.66, 36.04, 36.3, 36.24, 35.66, 36.33, 36.59, 36.41, 36.12, 36.6, 36.76, 35.66, 36.16, 36.55, 36.98, 37.4, 38.11, 38.27, 37.41, 36.73, 37.1, 36.34, 35.73, 35.35, 36.76, 37.27, 37.39, 37.67, 36.87, 36.95, 37.04, 37.32, 37.13, 37.35, 37.16, 37.78, 38.5, 37.88, 37.24, 37.19, 36.21, 36.66, 36.37, 35.6, 36.32, 36.35, 36.55, 35.73, 35.35, 36.0, 36.23, 35.63, 35.59, 34.62, 35.51, 35.15, 35.43, 34.31, 33.71, 33.18, 34.67, 35.0, 34.88, 35.2, 35.35, 36.97, 36.8, 37.17, 37.84, 38.43, 38.99, 39.21, 40.14, 40.15, 40.12, 41.27, 40.52, 41.82, 41.85, 41.3, 41.43, 41.93, 42.31, 42.31, 43.21, 44.55, 44.28, 45.46, 45.68, 44.66, 45.28, 45.94, 44.78, 44.46, 43.84, 44.86, 45.54, 46.16, 47.55, 47.58, 48.11, 48.6, 49.81, 50.48, 49.87, 49.69, 46.21, 47.45, 47.09, 45.59, 47.49, 47.3, 49.14, 47.6, 47.62, 49.22, 49.5, 47.09, 46.91, 47.01, 46.0, 47.46, 48.8, 47.59]};
-
-const FUNDS = {
-  SPUS:{er:'0.45%', color:'#2e7d5b', label:'SPUS · US equity'},
-  HLAL:{er:'0.50%', color:'#2f6fa8', label:'HLAL · US equity'},
-  SPWO:{er:'0.55%', color:'#c07a2d', label:'SPWO · Global ex-US'},
-  UMMA:{er:'0.65%', color:'#8a5fb8', label:'UMMA · Global'},
-  SPTE:{er:'0.55%', color:'#b8452e', label:'SPTE · Global tech'}
-};
-const ALL = Object.keys(FUNDS);
-let selected = new Set(['SPUS','HLAL','SPWO']);
-
-const chipsEl = document.getElementById('chips');
-ALL.forEach(t=>{
-  const b=document.createElement('button');
-  b.className='chip'+(selected.has(t)?' on':'');
-  b.style.setProperty('--chip-color',FUNDS[t].color);
-  b.setAttribute('aria-pressed',selected.has(t));
-  b.innerHTML=`<span class="dot"></span>${FUNDS[t].label}`;
-  b.onclick=()=>{
-    selected.has(t)?selected.delete(t):selected.add(t);
-    b.classList.toggle('on');
-    b.setAttribute('aria-pressed',selected.has(t));
-    renderTrend();
-  };
-  chipsEl.appendChild(b);
-});
-
-let trendChart=null;
-function renderTrend(){
-  const tickers=ALL.filter(t=>selected.has(t));
-  const n=RAW.dates.length;
-  const step=Math.max(1,Math.floor(n/110));
-  const idx=[];for(let i=0;i<n;i+=step)idx.push(i);
-  if(idx[idx.length-1]!==n-1)idx.push(n-1);
-  const labels=idx.map(i=>RAW.dates[i]);
-  const datasets=tickers.map(t=>{
-    const base=RAW[t][0];
-    return{label:t,data:idx.map(i=>+(RAW[t][i]/base*100).toFixed(2)),
-      borderColor:FUNDS[t].color,backgroundColor:'transparent',
-      borderWidth:2,pointRadius:0,tension:.15};
-  });
-  if(trendChart)trendChart.destroy();
-  trendChart=new Chart(document.getElementById('trendChart'),{
-    type:'line',data:{labels,datasets},
-    options:{responsive:true,maintainAspectRatio:false,
-      interaction:{mode:'index',intersect:false},
-      plugins:{legend:{position:'top',labels:{boxWidth:12,boxHeight:12,font:{family:"'Spline Sans Mono',monospace",size:11},color:'#4a5a6a'}}},
-      scales:{
-        x:{grid:{display:false},ticks:{maxTicksLimit:7,color:'#8b99a5',font:{family:"'Spline Sans Mono',monospace",size:10.5}}},
-        y:{grid:{color:'#e2e7ea'},ticks:{color:'#8b99a5',font:{family:"'Spline Sans Mono',monospace",size:10.5}}}
-      }}});
-  if(tickers.length){
-    const finals=tickers.map(t=>({t,v:RAW[t][n-1]/RAW[t][0]*100}));
-    finals.sort((a,b)=>b.v-a.v);
-    const best=finals[0],worst=finals[finals.length-1];
-    document.getElementById('trendNote').textContent =
-      tickers.length>1
-      ? `$100 became $${worst.v.toFixed(0)}–$${best.v.toFixed(0)} depending on the pick. Every selected fund ended higher than it began.`
-      : `$100 in ${best.t} became $${best.v.toFixed(0)} over these two years.`;
-  } else {
-    document.getElementById('trendNote').textContent='Select at least one fund above.';
-  }
-}
-renderTrend();
-
-// ---------- cost of inaction ----------
-const $=id=>document.getElementById(id);
-const fmt=v=>'$'+Math.round(v).toLocaleString('en-US');
-let gapChart=null;
-
-function calc(){
-  const amt=+$('amt').value, yrs=+$('yrs').value, ret=+$('ret').value/100, inf=+$('inf').value/100;
-  $('amtLbl').textContent=fmt(amt)+'/mo';
-  $('yrsLbl').textContent=yrs+(yrs===1?' year':' years');
-  $('retLbl').textContent=(ret*100).toFixed(1)+'%';
-  $('infLbl').textContent=(inf*100).toFixed(1)+'%';
-
-  const months=yrs*12, mr=Math.pow(1+ret,1/12)-1;
-  const investPath=[],cashPath=[],labels=[];
-  let inv=0,cash=0;
-  for(let m=1;m<=months;m++){
-    inv=inv*(1+mr)+amt;
-    cash+=amt;
-    if(m%12===0||m===months){
-      labels.push('Yr '+Math.ceil(m/12));
-      investPath.push(Math.round(inv));
-      // real purchasing power of idle cash
-      cashPath.push(Math.round(cash/Math.pow(1+inf,m/12)));
-    }
-  }
-  const contributed=amt*months;
-  const finalInv=investPath[investPath.length-1];
-  const finalCashReal=cashPath[cashPath.length-1];
-  const gap=finalInv-finalCashReal;
-
-  $('outcome').innerHTML=`
-    <div class="outcome-card cash">
-      <div class="lbl">Cash under the mattress (real value)</div>
-      <div class="big">${fmt(finalCashReal)}</div>
-      <div class="sub">${fmt(contributed)} saved, eroded by inflation</div>
-    </div>
-    <div class="outcome-card invest">
-      <div class="lbl">Invested monthly at ${(ret*100).toFixed(1)}%</div>
-      <div class="big">${fmt(finalInv)}</div>
-      <div class="sub">${fmt(contributed)} contributed + ${fmt(finalInv-contributed)} growth</div>
-    </div>
-    <div class="gap-line">Estimated cost of waiting ${yrs} years: <b>${fmt(gap)}</b> in real terms</div>`;
-
-  if(gapChart)gapChart.destroy();
-  gapChart=new Chart($('gapChart'),{
-    type:'line',
-    data:{labels,datasets:[
-      {label:'Invested',data:investPath,borderColor:'#2e7d5b',backgroundColor:'rgba(46,125,91,.10)',fill:true,borderWidth:2,pointRadius:0,tension:.2},
-      {label:'Idle cash (real)',data:cashPath,borderColor:'#8b99a5',backgroundColor:'transparent',borderDash:[5,4],borderWidth:2,pointRadius:0,tension:.2}
-    ]},
-    options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{position:'top',labels:{boxWidth:12,boxHeight:12,font:{family:"'Spline Sans Mono',monospace",size:11},color:'#4a5a6a'}}},
-      scales:{
-        x:{grid:{display:false},ticks:{maxTicksLimit:8,color:'#8b99a5',font:{family:"'Spline Sans Mono',monospace",size:10.5}}},
-        y:{grid:{color:'#e2e7ea'},ticks:{color:'#8b99a5',font:{family:"'Spline Sans Mono',monospace",size:10.5},callback:v=>'$'+(v>=1000?(v/1000)+'k':v)}}
-      }}});
-}
-['amt','yrs','ret','inf'].forEach(id=>$(id).addEventListener('input',calc));
-calc();
-
-// ---------- guess-first quiz ----------
-// To collect real reader guesses later, POST picks in submitGuess() to your
-// own endpoint (Supabase/Google Form), then fetch live counts and render a
-// distribution bar per option here. Until then, reveals show data only.
-function submitGuess(qIndex, optIndex){
-  // Placeholder for real aggregation. Example:
-  // fetch('https://YOUR-ENDPOINT/guess', {method:'POST',
-  //   headers:{'Content-Type':'application/json'},
-  //   body: JSON.stringify({q:qIndex, pick:optIndex})});
-}
-document.querySelectorAll('.quiz-q').forEach(q=>{
-  const opts=[...q.querySelectorAll('.quiz-opt')];
-  const reveal=q.querySelector('.quiz-reveal');
-  opts.forEach((btn,i)=>{
-    btn.addEventListener('click',()=>{
-      if(q.dataset.done)return;
-      q.dataset.done='1';
-      btn.classList.add('picked');
-      opts.forEach(o=>{o.disabled=true; if(o.hasAttribute('data-correct'))o.classList.add('correct-reveal');});
-      submitGuess(+q.dataset.q, i);
-      reveal.classList.add('show');
-    });
-  });
-});
-</script>
 </body>
 </html>
