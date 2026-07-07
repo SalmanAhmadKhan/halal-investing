@@ -70,6 +70,16 @@ footer a{color:var(--sage)}
 
 @media (max-width:640px){header{padding:48px 0 36px}.panel{padding:18px;margin-left:-10px;margin-right:-10px}.chart-box{height:270px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.more-reading{margin:44px 0 0}
+.more-reading .section-label{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:14px}
+.mr-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+a.mr-card{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;text-decoration:none;color:var(--night);transition:border-color .15s}
+a.mr-card:hover{border-color:var(--sage)}
+.mr-kicker{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+.mr-title{font-family:'Lora',serif;font-weight:600;font-size:17.5px;line-height:1.4}
+.mr-arrow{font-family:var(--mono);font-size:12.5px;color:var(--sage);margin-top:8px}
+@media (max-width:640px){.mr-cards{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -142,12 +152,31 @@ footer a{color:var(--sage)}
     <p><b>Third, screening strictness differs.</b> Fund families don't apply identical rules, and AMAGX's long-tenured, scholar-reviewed process is part of why some investors prefer it, independent of performance. If that stricter or more established screening gives you confidence, that's a legitimate reason to hold it that a return chart can't capture.</p>
     <p>But if your question was the reader's original one — <em>does the old guard still win?</em> — then over these two years, on the numbers alone, the honest answer is: <span class="hl">no, and it mostly duplicates a fund you'd probably own anyway.</span></p>
   </div>
+
+  <div class="wrap">
+    <div class="more-reading">
+      <div class="section-label">More on this series</div>
+      <div class="mr-cards">
+        <a class="mr-card" href="start-anyway-halal-investing.html">
+          <div class="mr-kicker">Start here</div>
+          <div class="mr-title">You don't need the perfect fund. You need a first month.</div>
+          <div class="mr-arrow">Read →</div>
+        </a>
+        <a class="mr-card" href="halal-vs-sp500.html">
+          <div class="mr-kicker">Reader question</div>
+          <div class="mr-title">What does halal investing actually cost you?</div>
+          <div class="mr-arrow">Read →</div>
+        </a>
+      </div>
+    </div>
+  </div>
 </article>
 
 <footer>
   <div class="wrap">
     <p>Data: monthly "growth of $1,000" series, Mar 2024 – May 2026, as exported from a brokerage comparison tool. Total returns computed from first to last observation; volatility is the standard deviation of monthly returns annualized by √12; correlations are Pearson coefficients on monthly returns. Expense ratios per fund sponsors. HLAL omitted due to a five-ticker limit in the source tool.</p>
     <p>Written in a personal capacity — personal views only, not investment or religious advice. Past performance does not predict future results. Got a fund you'd like compared? <a href="mailto:practicingEconomist@gmail.com">practicingEconomist@gmail.com</a>.</p>
+    <p style="opacity:.85">Analysis and interactive tools built with Claude (Anthropic); the questions, framing, and conclusions are my own.</p>
   </div>
 </footer>
 

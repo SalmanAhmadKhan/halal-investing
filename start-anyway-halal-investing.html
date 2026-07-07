@@ -131,6 +131,16 @@ footer p{margin-bottom:.9em;max-width:44em}
   .outcome{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.more-reading{margin:44px 0 0}
+.more-reading .section-label{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:14px}
+.mr-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+a.mr-card{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;text-decoration:none;color:var(--night);transition:border-color .15s}
+a.mr-card:hover{border-color:var(--sage)}
+.mr-kicker{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+.mr-title{font-family:'Lora',serif;font-weight:600;font-size:17.5px;line-height:1.4}
+.mr-arrow{font-family:var(--mono);font-size:12.5px;color:var(--sage);margin-top:8px}
+@media (max-width:640px){.mr-cards{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -285,11 +295,30 @@ footer p{margin-bottom:.9em;max-width:44em}
     <p>Past performance doesn't guarantee anything. The trend lines above describe what happened, not what will. Halal funds carry expense ratios (roughly 0.18% to 0.65% for the funds mentioned). Screening methodologies differ slightly between fund families, so if strictness matters to you, read each fund's published methodology or ask a scholar you trust. And this page is education, not personalized investment or religious advice.</p>
     <p>But here's the thing the fine print can't undo: <span class="hl">every year of waiting for the perfect answer is a year of compounding you don't get back.</span> Pick one fund. Set up $50 a month. You can refine everything else later, from inside the market instead of outside it.</p>
   </div>
+
+  <div class="wrap">
+    <div class="more-reading">
+      <div class="section-label">Reader questions this sparked</div>
+      <div class="mr-cards">
+        <a class="mr-card" href="halal-vs-sp500.html">
+          <div class="mr-kicker">Reader question</div>
+          <div class="mr-title">What does halal investing actually cost you?</div>
+          <div class="mr-arrow">Read →</div>
+        </a>
+        <a class="mr-card" href="amagx-vs-halal-etfs.html">
+          <div class="mr-kicker">Reader question</div>
+          <div class="mr-title">Does the old guard still win? AMAGX vs the ETFs</div>
+          <div class="mr-arrow">Read →</div>
+        </a>
+      </div>
+    </div>
+  </div>
 </article>
 
 <footer>
   <div class="wrap">
     <p>Fund trend data: actual daily closing prices Jul 1 2024 – Jul 1 2026, indexed to 100. Calculator uses monthly compounding of user-set assumptions; "cash" scenario assumes 0% nominal return, with inflation applied to show real purchasing power. Educational content only — not investment, tax, legal, or religious advice.</p>
+    <p style="opacity:.85">Analysis and interactive tools built with Claude (Anthropic); the questions, framing, and conclusions are my own.</p>
   </div>
 </footer>
 
